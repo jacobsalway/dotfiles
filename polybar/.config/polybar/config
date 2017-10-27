@@ -1,0 +1,243 @@
+; ===
+; colors
+; ===
+
+[colors]
+bg = #e9000000
+bg-alt = #333333
+fg = #f9e3e3
+fg-alt = #00ffff
+p = #db8c5c
+s = #00ff00
+red = #ff0000
+
+; ===
+; bar settings
+; ===
+
+[bar/top]
+; set by the launch script
+monitor = ${env:MONITOR}
+width = 100%
+height = 25
+;override-redirect = true
+
+background = ${colors.bg}
+foreground = ${colors.fg}
+
+line-size = 3
+line-color = #f00
+
+spacing = 0
+padding-left = 0
+padding-right = 2
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = "Source Code Pro:size=9;3"
+font-1 = "Wuncon Siji:size=10;3"
+;font-1 = "Material Icons:size=10;4"
+;font-1 = "FontAwesome:size=8;3"
+
+modules-left = i3 filesystem
+;modules-left = i3 mpd
+;modules-center = date filesystem
+modules-center = mpd
+#modules-right = volume temperature cpu memory eth calendar date powermenu
+modules-right = volume cpu memory eth calendar date
+
+tray-position = right
+
+; ===
+; modules
+; ===
+
+[module/i3]
+type = internal/i3
+
+ws-icon-0 = 1:one;
+ws-icon-1 = 2:two;2
+ws-icon-2 = 3:three;3
+ws-icon-3 = 4:four;4
+ws-icon-4 = 5:five;
+ws-icon-5 = 6:six;6
+ws-icon-6 = 7:seven;7
+ws-icon-7 = 8:eight;8
+ws-icon-8 = 9:nine;
+
+strip-wsnumbers = true
+pin-workspaces = true
+index-sort = true
+
+label-focused = %name%
+label-focused-foreground = ${colors.p}
+label-focused-underline = ${colors.p}
+label-focused-background = ${colors.bg-alt}
+label-focused-padding = 2
+
+label-unfocused = %name%
+label-unfocused-padding = 2
+
+label-urgent = %name%
+label-urgent-foreground = ${colors.red}
+label-urgent-padding = 2
+
+label-visible = %name%
+label-visible-background = ${colors.bg-alt}
+label-visible-padding = 2
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format = (<label>)
+format-prefix = " "
+label = %percentage%
+
+[module/memory]
+type = internal/memory
+interval = 10
+format = (<label>)
+format-prefix = " "
+label = %percentage_used%
+
+[module/eth]
+type = internal/network
+interface = enp2s0
+interval = 3.0
+
+format-connected-prefix = " "
+format-connected-foreground-foreground = ${colors.fg-alt}
+label-connected = %downspeed% (%ifname%)
+
+[module/date]
+type = internal/date
+interval = 1
+
+time = %H:%M:%S
+
+format-prefix = " "
+;format-prefix-foreground = ${colors.fg-alt}
+
+label = "%time%"
+
+[module/calendar]
+type = internal/date
+interval = 10
+
+time = "%d/%m"
+time-alt = "%a %d %b %Y"
+
+format-prefix = " "
+
+label = "%time%"
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 3
+warn-temperature = 60
+interval = 3
+
+format-prefix = " "
+
+format = "(<label>)"
+format-warn = "<ramp> <label-warn>"
+
+label = %temperature%
+label-warn = %temperature%
+
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+
+[module/mpd]
+type = internal/mpd
+
+host = ::1
+port = 6600
+
+format-online-prefix = " "
+format-online = <label-song> - <label-time>
+# <icon-prev> <toggle> <icon-next>
+#<toggle>
+
+icon-prev = 
+icon-stop = 
+icon-play = 
+icon-pause = 
+icon-next = 
+#icon-prev = <-
+#icon-stop = X
+#icon-play-prefix = #f00
+#icon-play = (Paused)
+#icon-pause =
+#icon-next = ->
+
+;bar-progress-width = 45
+;bar-progress-indicator = |
+;bar-progress-fill = -
+;bar-progress-empty = -
+
+label-song = %title%
+label-song-maxlen = 70
+label-song-ellipsis = true
+
+[module/volume]
+type = internal/volume
+
+format-volume = <label-volume>
+;format-volume = <label-volume> <bar-volume>
+format-volume-prefix = " "
+label-volume = (%percentage%)
+label-volume-foreground = ${colors.fg}
+
+format-muted-prefix =
+format-muted-foreground = ${colors.fg}
+label-muted = Mute
+
+bar-volume-width = 6
+bar-volume-foreground-0 = ${colors.p}
+bar-volume-foreground-1 = ${colors.p}
+bar-volume-foreground-2 = ${colors.p}
+bar-volume-foreground-3 = ${colors.p}
+bar-volume-foreground-4 = ${colors.p}
+bar-volume-foreground-5 = ${colors.p}
+bar-volume-foreground-6 = ${colors.p}
+bar-volume-foreground-7 = ${colors.p}
+bar-volume-foreground-8 = ${colors.p}
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 0
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.fg}
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /
+mount-1 = /home
+
+label-mounted = %mountpoint%: %percentage_used%%
+label-unmounted = %mountpoint% not mounted
+;label-unmounted-foreground = ${colors.foreground-alt}
+
+[module/powermenu]
+type = custom/menu
+
+format-open = <label-open>
+format-close = <label-closed>
+
+label-open = ""
+label-close = "close"
+
+label-separator = " "
+
+; reboot
+menu-0-1 = "reboot"
+menu-0-1-exec = systemctl reboot
+; shutdown
+menu-0-0 = "shutdown"
+menu-0-0-exec = shutdown now

@@ -1,0 +1,54 @@
+ckground:   [97]#282a36
+*foreground:   #eff0eb
+*cursorColor:  #9aedfe
+
+*color0:      #33303b
+*color8:      #4f4b58
+*color1:      #ff5c57
+*color9:      #ff5c57
+*color2:      #5af78e
+*color10:     #5af78e
+*color3:      #f3f99d
+*color11:     #f3f99d
+*color4:      #57c7ff
+*color12:     #57c7ff
+*color5:      #ff6ac1
+*color13:     #ff6ac1
+*color6:      #9aedfe
+*color14:     #9aedfe
+*color7:      #eff0eb
+*color15:     #eff0eb
+
+! font config
+Xft.lcdfilter: lcddefault
+Xft.antialias: true
+Xft.autohint: 0
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.rgba: rgb
+Xft.dpi: 96
+
+URxvt.intensityStyles:false
+URxvt.foreground:#ffffff
+URxvt.background:[91]#000000
+URxvt.depth:32
+URxvt.scrollBar:false
+URxvt.cursorColor:white
+!URxvt.cursorBlink: true
+URxvt.cursor: i-beam
+URxvt.matcher.button:	1
+!URxvt.font: xft:Inconsolata:style=Regular:antialias=true:autohint=true:size=10
+URxvt.font: xft:Source Code Pro for Powerline:size=9
+URxvt.letterSpace: -1
+URxvt.internalBorder: 9
+
+rofi.color-enabled:true
+rofi.color-window: #000, #000, #000
+rofi.color-normal: #111, #819396, #222, #008ed4, #ffffff
+rofi.color-active: #002b37, #008ed4, #003643, #008ed4, #66c6ff
+rofi.color-urgent: #002b37, #da4281, #003643, #008ed4, #890661
+
+rofi.lines: 5
+rofi.bw: 0
+rofi.hide-scrollbar: true
+rofi.width: 40
