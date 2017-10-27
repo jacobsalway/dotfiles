@@ -1,5 +1,6 @@
 ## table of contents
  - [introduction](#dotfiles)
+ - [installing](#installing)
 
 # dotfiles
 these are my dotfiles, saved using stow
