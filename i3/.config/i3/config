@@ -63,14 +63,14 @@ for_window [instance="dropdown"] floating enable
 for_window [instance="dropdown"] resize set 1000px 620px
 for_window [instance="dropdown"] move position center
 for_window [instance="dropdown"] move scratchpad
-exec --no-startup-id urxvt -name dropdown
+exec --no-startup-id $term -name dropdown
 
 # arithmetic window
 for_window [instance="math"] floating enable
 for_window [instance="math"] resize set 600px 350px 
 for_window [instance="math"] move position center
 for_window [instance="math"] move scratchpad
-exec --no-startup-id urxvt -name math -e gcalccmd
+exec --no-startup-id $term -name math -e R -q
 
 # === basic bindings ===
 
