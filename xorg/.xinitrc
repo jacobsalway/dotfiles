@@ -35,5 +35,8 @@ if [ -s ~/.Xmodmap ]; then
     xmodmap ~/.Xmodmap
 fi
 
+# restore wal colour scheme
+wal -R
+
 # start i3
 exec i3
