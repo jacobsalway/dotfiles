@@ -30,7 +30,7 @@ Xft.dpi: 96
 
 URxvt.intensityStyles:false
 URxvt.foreground:#ffffff
-URxvt.background:[91]#000000
+URxvt.background:[90]#000000
 URxvt.depth:32
 URxvt.scrollBar:false
 URxvt.cursorColor:white

@@ -9,7 +9,7 @@ font pango:monospace 9
 set $mod Mod1
 set $sup Mod4
 #set $term urxvt
-set $term st
+set $term urxvt
 set $browser chromium 
 
 # === external scripts ===
@@ -26,9 +26,6 @@ bindsym $mod+Scroll_Lock exec --no-startup-id ~/.config/scripts/wallpaper/pick.s
 
 # polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-
-# us international and map capslock to esc
-#exec_always --no-startup-id setxkbmap -layout us -variant altgr-intl -option caps:escape
 
 # for alsa/amixer
 set $inc --no-startup-id amixer sset Master 2%+
@@ -148,8 +145,8 @@ bindsym $mod+Shift+m exec $mute
 # general workspace bindings
 bindsym $mod+Tab workspace back_and_forth
 
-# application switch
-#bindsym $mod+grave container back_and_forth
+# flash active window
+bindsym $mod+grave exec --no-startup-id flash.sh
 
 # set workspace names
 set $WS1 1:one
