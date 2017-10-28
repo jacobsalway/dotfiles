@@ -1,1 +1,6 @@
 .zcoredump
+history
+tagged
+bookmarks
+error
+*.log
