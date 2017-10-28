@@ -1,6 +1,6 @@
 " true colour terminal
-"set termguicolors
-"set t_Co=256
+" set termguicolors
+set t_Co=256
 
 " show matching brackets
 set showmatch
