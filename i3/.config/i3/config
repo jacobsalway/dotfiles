@@ -73,7 +73,7 @@ for_window [instance="math"] floating enable
 for_window [instance="math"] resize set 600px 350px 
 for_window [instance="math"] move position center
 for_window [instance="math"] move scratchpad
-exec --no-startup-id urxvt -name math gcalccmd
+exec --no-startup-id urxvt -name math -e gcalccmd
 
 # === basic bindings ===
 
