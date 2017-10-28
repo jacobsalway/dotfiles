@@ -10,7 +10,7 @@ set $mod Mod1
 set $sup Mod4
 #set $term urxvt
 set $term st
-set $browser firefox 
+set $browser chromium 
 
 # === external scripts ===
 
@@ -26,6 +26,9 @@ bindsym $mod+Scroll_Lock exec --no-startup-id ~/.config/scripts/wallpaper/pick.s
 
 # polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
+
+# us international and map capslock to esc
+#exec_always --no-startup-id setxkbmap -layout us -variant altgr-intl -option caps:escape
 
 # for alsa/amixer
 set $inc --no-startup-id amixer sset Master 2%+
@@ -59,17 +62,18 @@ set $beg --no-startup-id mpc seek 0%
 # === dropdown windows ==
 
 # background terminal
-for_window [instance="dropdown"] move scratchpad
-for_window [instance="dropdown"] resize set 800 500
+for_window [instance="dropdown"] floating enable
+for_window [instance="dropdown"] resize set 1000px 620px
 for_window [instance="dropdown"] move position center
+for_window [instance="dropdown"] move scratchpad
 exec --no-startup-id urxvt -name dropdown
 
 # arithmetic window
 for_window [instance="math"] floating enable
-#for_window [instance="math"] resize set 800 300
+for_window [instance="math"] resize set 600px 350px 
 for_window [instance="math"] move position center
 for_window [instance="math"] move scratchpad
-#exec --no-startup-id $term -fn "xft:mono:pixelsize=24" -name math -e R -q
+exec --no-startup-id urxvt -name math gcalccmd
 
 # === basic bindings ===
 
