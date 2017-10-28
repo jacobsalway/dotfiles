@@ -12,7 +12,7 @@ endfunction
 autocmd ColorScheme * call AdaptScheme()
 
 " colour scheme
-colorscheme molokai
+colorscheme wal 
 
 " lightline
 set laststatus=2
