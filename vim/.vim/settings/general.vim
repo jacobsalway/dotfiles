@@ -73,3 +73,6 @@ set autoindent
 " set leader key to comma
 let mapleader=","
 
+" get rid of weird esc delay
+set ttimeoutlen=0
+set timeoutlen=1000
