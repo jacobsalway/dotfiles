@@ -13,6 +13,6 @@ function git_dirty {
     fi
 }
 
-PROMPT='[%F{111}%n@%M%f] %~ %F{159}$(git_prompt_info)$(git_dirty)%f
+PROMPT='[%F{6}%n%f@%F{6}%M%f] %~ %F{8}$(git_prompt_info)$(git_dirty)%f
 $ '
-RPROMPT='%F{243}%*%f'
+RPROMPT='%F{8}%*%f'

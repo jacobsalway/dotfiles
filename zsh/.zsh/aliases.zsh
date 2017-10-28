@@ -1,5 +1,5 @@
 alias cs='cd;ls'
-alias wallpaper='~/.config/scripts/wallpaper/change.sh'
+alias wallpaper='wallpaper.sh'
 
 alias cl='clear'
 
