@@ -5,4 +5,4 @@
 :command Q q
 
 " clear search highlighting
-" nnoremap <esc> :noh<return><esc>
+map <silent> <Space> :noh<cr>
