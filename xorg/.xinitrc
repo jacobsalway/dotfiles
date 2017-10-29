@@ -36,7 +36,7 @@ if [ -s ~/.Xmodmap ]; then
 fi
 
 # restore wal colour scheme
-wal -R
+#wal -e -a "90" -b "#000000" -R
 
 # start i3
 exec i3

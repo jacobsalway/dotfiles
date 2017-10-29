@@ -9,3 +9,5 @@ alias fucking='sudo'
 alias ls='ls -GFh --color=auto'
 alias ll='ls -GFhl --color=auto'
 alias lsa='ls -GFha --color=auto'
+
+alias mywal='wal -e -a "90" -b "#000000"'

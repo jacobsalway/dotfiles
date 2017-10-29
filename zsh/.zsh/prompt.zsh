@@ -15,4 +15,4 @@ function git_dirty {
 
 PROMPT='[%F{6}%n%f@%F{6}%M%f] %~ %F{8}$(git_prompt_info)$(git_dirty)%f
 $ '
-RPROMPT='%F{8}%*%f'
+RPROMPT='%F{8}%D{%H:%M:%S}%f'

@@ -91,6 +91,8 @@ label-song = %title% / %artist%
 label-song-maxlen = 70
 label-song-ellipsis = true
 
+label-offline = mpd is offline
+
 ; right
 
 [module/volume]

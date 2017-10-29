@@ -6,4 +6,4 @@ export COLOR_GRAY='$fg[243]'
 export COLOR_LIGHT_BLUE='$fg[111]'
 export COLOR_GIT='$fg[159]'
 
-(wal -r &)
+#(wal -r &)
