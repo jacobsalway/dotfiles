@@ -56,9 +56,10 @@ pin-workspaces = true
 index-sort = true
 
 label-focused = %name%
-label-focused-underline = ${colors.p}
+;label-focused-underline = ${colors.p}
 ;label-focused-background = ${colors.bg-alt}
 label-focused-padding = 2
+label-focused-foreground = ${colors.p}
 
 label-unfocused = %name%
 label-unfocused-padding = 2
