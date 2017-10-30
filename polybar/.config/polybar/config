@@ -1,7 +1,7 @@
 ; colors
 
 [colors]
-bg = #e5000000
+bg = #b2000000
 bg-alt = #333333
 fg = ${xrdb:color7}
 p = ${xrdb:color12}
