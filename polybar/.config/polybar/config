@@ -134,7 +134,7 @@ type = internal/network
 interface = enp2s0
 interval = 3
 
-label-connected = %downspeed% %upspeed% 
+label-connected = %downspeed% (%local_ip%) 
 
 [module/time]
 type = internal/date
