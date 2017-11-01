@@ -6,10 +6,13 @@ gaps inner 6
 gaps outer 3
 smart_gaps on
 font pango:monospace 9
+
+# === variable settings ===
+
 set $mod Mod1
 set $sup Mod4
 set $term urxvt
-set $browser chromium 
+set $browser firefox-nightly
 
 # === external scripts ===
 
@@ -20,28 +23,27 @@ exec --no-startup-id mpd
 exec --no-startup-id compton -b --config ~/.config/compton/compton.conf
 
 # wallpaper
-# exec --no-startup-id ~/.config/wallpaper/pick.sh &
 bindsym $mod+Scroll_Lock exec --no-startup-id ~/bin/wallpaper/pick.sh &
 
 # polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # for alsa/amixer
-set $inc --no-startup-id amixer sset Master 2%+
-set $biginc --no-startup-id amixer sset Master 5%+
-set $dec --no-startup-id amixer sset Master 2%-
-set $bigdec --no-startup-id amixer sset Master 5%-
-set $mute --no-startup-id amixer sset Master toggle
-set $truemute --no-startup-id amixer sset Master mute
+#set $inc --no-startup-id amixer sset Master 2%+
+#set $biginc --no-startup-id amixer sset Master 5%+
+#set $dec --no-startup-id amixer sset Master 2%-
+#set $bigdec --no-startup-id amixer sset Master 5%-
+#set $mute --no-startup-id amixer sset Master toggle
+#set $truemute --no-startup-id amixer sset Master mute
 
 # for pulseaudio/pamixer
-#set $inc --no-startup-id pamixer --allow-boost -i 2
-#set $biginc --no-startup-id pamixer --allow-boost -i 6
-#set $dec --no-startup-id pamixer --allow-boost -d 2
-#set $bigdec --no-startup-id pamixer --allow-boost -d 6
-#set $mute --no-startup-id pamixer --allow-boost -t
-#set $micmute --no-startup-id pamixer --allow-boost -t
-#set $truemute --no-startup-id pamixer -m
+set $inc --no-startup-id pamixer --allow-boost -i 2
+set $biginc --no-startup-id pamixer --allow-boost -i 6
+set $dec --no-startup-id pamixer --allow-boost -d 2
+set $bigdec --no-startup-id pamixer --allow-boost -d 6
+set $mute --no-startup-id pamixer --allow-boost -t
+set $micmute --no-startup-id pamixer --allow-boost -t
+set $truemute --no-startup-id pamixer -m
 
 # for mpc
 set $music --no-startup-id $term -e ncmpcpp
@@ -55,6 +57,29 @@ set $lilbak --no-startup-id mpc seek -10
 set $bigbak --no-startup-id mpc seek -120
 set $beg --no-startup-id mpc seek 0%
 
+# for moc:
+#set $music urxvt -e mocp
+#set $pause --no-startup-id mocp -G
+#set $truepause --no-startup-id mocp -P
+#set $next --no-startup-id mocp -f
+#set $prev --no-startup-id mocp -r
+#set $lilfor --no-startup-id mocp -k 10
+#set $bigfor --no-startup-id mocp -k 120
+#set $lilbak --no-startup-id mocp -k -10
+#set $bigbak --no-startup-id mocp -k -120
+#set $beg --no-startup-id mocp -j 0%
+
+# for cmus:
+#set $music urxvt -e cmus
+#set $pause --no-startup-id cmus-remote -u
+#set $next --no-startup-id cmus-remote -n
+#set $prev --no-startup-id cmus-remote -r
+#set $lilfor --no-startup-id cmus-remote -k +10
+#set $bigfor --no-startup-id cmus-remote -k +120
+#set $lilbak --no-startup-id cmus-remote -k -10
+#set $bigbak --no-startup-id cmus-remote -k -120
+#set $beg --no-startup-id cmus-remote -k 00:00:00
+
 # === dropdown windows ==
 
 # background terminal
@@ -62,11 +87,11 @@ for_window [instance="dropdown"] floating enable
 for_window [instance="dropdown"] resize set 1000px 620px
 for_window [instance="dropdown"] move position center
 for_window [instance="dropdown"] move scratchpad
-exec --no-startup-id $term -name dropdown
+exec --no-startup-id $term -name dropdown -e tmux
 
 # arithmetic window
 for_window [instance="math"] floating enable
-for_window [instance="math"] resize set 600px 350px 
+for_window [instance="math"] resize set 600px 350px
 for_window [instance="math"] move position center
 for_window [instance="math"] move scratchpad
 exec --no-startup-id $term -name math -e R -q
@@ -82,26 +107,25 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+Escape workspace prev
 bindsym $mod+Shift+Escape exec i3-msg exit
 
+bindsym $mod+grave exec --no-startup-id flash.sh
+
 # === letter bindings ===
+
 bindsym $mod+q kill
 bindsym $mod+Shift+q kill
 
-bindsym $mod+Shift+e exit
-
 bindsym $mod+Shift+w exec --no-startup-id $browser
 
-bindwym $mod+f fullscreen toggle
+bindsym $mod+Shift+e exit
 
 bindsym $mod+r exec $term -e ranger
 
 bindsym $mod+t split toggle
-bindsym $mod+Shift+t gaps inner current set 6; gaps outer current set 3 
-
-bindsym $mod+u [instance="dropdown"] scratchpad show; move position center
+bindsym $mod+Shift+t gaps inner current set 6; gaps outer current set 3
 
 bindsym $mod+Shift+y resize shrink width 5 px or 5 ppt
 
-#bindsym $mod+Shift+u exec --no-startup-id urxvt -name dropdown
+bindsym $mod+u [instance="dropdown"] scratchpad show; move position center
 bindsym $mod+Shift+u resize shrink height 5 px or 5 ppt
 
 bindsym $mod+i exec $term -e htop
@@ -123,18 +147,20 @@ bindsym $mod+Shift+d gaps inner current set 0; gaps outer current set 0
 bindsym $mod+f fullscreen toggle
 
 bindsym $mod+h focus left
-bindsym $mod+Shift+h move left
+bindsym $mod+Shift+h move left 30
 
 bindsym $mod+j focus down
-bindsym $mod+Shift+j move down
+bindsym $mod+Shift+j move down 30
 
 bindsym $mod+k focus up
-bindsym $mod+Shift+k move up
+bindsym $mod+Shift+k move up 30
 
 bindsym $mod+l focus right
-bindsym $mod+Shift+l move right
+bindsym $mod+Shift+l move right 30
 
-bindsym $mod+Shift+z gaps outer current minus 4
+bindsym $mod+Shift+z gaps outer current minus 1
+
+bindsym $mod+n move position center
 
 bindsym $mod+Shift+m exec $mute
 
@@ -143,8 +169,8 @@ bindsym $mod+Shift+m exec $mute
 # general workspace bindings
 bindsym $mod+Tab workspace back_and_forth
 
-# flash active window
-bindsym $mod+grave exec --no-startup-id flash.sh
+bindsym $mod+apostrophe split horizontal; exec $term
+bindsym $mod+slash split vertical; exec $term
 
 # set workspace names
 set $WS1 1:one
@@ -158,29 +184,21 @@ set $WS8 8:eight
 set $WS9 9:nine
 
 # set outputs
+# TOOD move these to a script eventually
 set $OP1 DP-3
 set $OP2 DP-4
 set $OP3 DVI-D-0
-set $OP4 HDMI-0
 
 # workspaces to monitors
 workspace $WS1 output $OP1
 workspace $WS2 output $OP2
 workspace $WS3 output $OP3
-workspace $WS4 output $OP4
-workspace $WS5 output $OP1
-workspace $WS6 output $OP2
-workspace $WS7 output $OP3
-workspace $WS8 output $OP4
-
-# move workspace to monitor
-#bindsym $sup+1 move workspace to output $OP1
-#bindsym $sup+2 move workspace to output $OP2
-#bindsym $sup+3 move workspace to output $OP3
-
-# reset workspace positions
-#bindsym $sup+a move workspace to output left
-#bindsym $sup+d move workspace to output right
+workspace $WS4 output $OP1
+workspace $WS5 output $OP2
+workspace $WS6 output $OP3
+workspace $WS7 output $OP1
+workspace $WS8 output $OP2
+workspace $WS9 output $OP3
 
 # switch to workspaces
 bindsym $mod+1 workspace $WS1
@@ -191,6 +209,7 @@ bindsym $mod+5 workspace $WS5
 bindsym $mod+6 workspace $WS6
 bindsym $mod+7 workspace $WS7
 bindsym $mod+8 workspace $WS8
+bindsym $mod+9 workspace $WS9
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $WS1; workspace $WS1
@@ -201,13 +220,12 @@ bindsym $mod+Shift+5 move container to workspace $WS5; workspace $WS5
 bindsym $mod+Shift+6 move container to workspace $WS6; workspace $WS6
 bindsym $mod+Shift+7 move container to workspace $WS7; workspace $WS7
 bindsym $mod+Shift+8 move container to workspace $WS8; workspace $WS8
+bindsym $mod+Shift+9 move container to workspace $WS9; workspace $WS9
 
 # swap workspaces on monitors
-
 bindsym $sup+1 exec --no-startup-id python ~/.config/scripts/switch.py $OP1
 bindsym $sup+2 exec --no-startup-id python ~/.config/scripts/switch.py $OP2
 bindsym $sup+3 exec --no-startup-id python ~/.config/scripts/switch.py $OP3
-bindsym $sup+4 exec --no-startup-id python ~/.config/scripts/switch.py $OP4
 
 # === numpad ===
 
@@ -254,9 +272,6 @@ bindsym $mod+Shift+bracketright exec $next
 
 # reload the configuration file
 bindsym Mod1+Shift+c reload
+
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym Mod1+Shift+r restart
-
-# === lol ===
-
-bindsym $mod+Shift+Delete exec $truemute ; exec $truepause ; workspace lmao ; exec $term -e htop ; exec $term -e ranger
