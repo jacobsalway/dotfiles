@@ -1,12 +1,19 @@
-source ~/.zsh/colors.zsh
-source ~/.zsh/exports.zsh
-source ~/.zsh/setopt.zsh
-source ~/.zsh/prompt.zsh
-source ~/.zsh/aliases.zsh
-source ~/.zsh/bindkeys.zsh
+# environment
+source $HOME/.zsh/environment.zsh
 
-autoload -Uz compinit promptinit
-compinit -d ~/.cache/zsh/zcompdump-$ZSH_VERSION
-promptinit
+typeset -ga sources
+sources+="$ZSH_CONFIG/environment.zsh"
+sources+="$ZSH_CONFIG/options.zsh"
+sources+="$ZSH_CONFIG/prompt.zsh"
+sources+="$ZSH_CONFIG/functions.zsh"
+sources+="$ZSH_CONFIG/aliases.zsh"
 
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# completion config
+sources+="$ZSH_CONFIG/completion.zsh"
+
+# try to include all sources
+foreach file (`echo $sources`)
+    if [[ -a $file ]]; then
+        source $file
+    fi
+end

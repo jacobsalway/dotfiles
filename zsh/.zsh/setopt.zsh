@@ -1,2 +1,0 @@
-setopt PROMPT_SUBST
-unsetopt share_history
