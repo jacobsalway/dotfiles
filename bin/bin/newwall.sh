@@ -1,6 +1,6 @@
 #!/bin/bash
 
-orig=$HOME/wallpapers
+orig=$HOME/Wallpapers
 des=$HOME/.wallpapers
 
 while getopts ":f:" opt; do
