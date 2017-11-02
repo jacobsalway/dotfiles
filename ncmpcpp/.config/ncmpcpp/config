@@ -1,5 +1,6 @@
 # ncmpcpp settings
 ncmpcpp_directory = ~/.ncmpcpp
+lyrics_directory = ~/.cache/lyrics
 
 # mpd settings
 mpd_host = ::1
