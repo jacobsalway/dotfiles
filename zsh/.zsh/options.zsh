@@ -1,5 +1,3 @@
-export GREP_OPTIONS='--binary-files=without-match --ignore-case'
-
 # history files
 if (( ! EUID )); then
     HISTFILE=$ZSH_CACHE/history_root
