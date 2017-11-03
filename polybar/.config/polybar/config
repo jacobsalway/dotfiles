@@ -64,7 +64,7 @@ ws-icon-5 = 6:six;
 ws-icon-6 = 7:seven;
 ws-icon-7 = 8:eight;
 ws-icon-8 = 9:nine;
-ws-icon-default = 
+ws-icon-default = 
 
 strip-wsnumbers = true
 pin-workspaces = true
@@ -162,7 +162,7 @@ label-connected = %downspeed%
 type = internal/date
 interval = 1
 
-time = "%a %d/%m/%y %H:%M:%S"
-time-alt = %A %B %d"
+time = "%a %d/%m/%y %I:%M:%S %p"
+time-alt = %s 
 
 label = %time%
