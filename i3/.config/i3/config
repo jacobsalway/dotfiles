@@ -12,7 +12,7 @@ font pango:monospace 9
 set $mod Mod1
 set $sup Mod4
 set $term urxvt
-set $browser firefox-nightly
+set $browser chromium
 
 # === external scripts ===
 
