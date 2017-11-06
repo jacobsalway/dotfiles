@@ -35,11 +35,14 @@ if [ -s ~/.Xmodmap ]; then
     xmodmap ~/.Xmodmap
 fi
 
-export GTK_IM_MODULE=ibus
-export XMODIFIERS=@im=ibus
-export QT_IM_MODULE=ibus
+#export GTK_IM_MODULE=ibus
+#export XMODIFIERS=@im=ibus
+#export QT_IM_MODULE=ibus
 
-ibus-daemon -drx
+#ibus-daemon -drx
+
+xset r rate 180 40
+
 # restore wal colour scheme
 #wal -e -a "90" -b "#000000" -R
 
