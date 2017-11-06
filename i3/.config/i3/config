@@ -185,8 +185,8 @@ set $WS9 9:nine
 
 # set outputs
 # TOOD move these to a script eventually
-set $OP1 DP-3
-set $OP2 DP-4
+set $OP1 DP-5
+set $OP2 DP-2
 set $OP3 DVI-D-0
 
 # workspaces to monitors
