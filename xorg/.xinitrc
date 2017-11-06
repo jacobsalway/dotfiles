@@ -41,7 +41,9 @@ fi
 
 #ibus-daemon -drx
 
-xset r rate 180 40
+# keyboard repeat rate and screen timeout
+xset r rate 220 32
+xset s 3600 3600
 
 # restore wal colour scheme
 #wal -e -a "90" -b "#000000" -R
