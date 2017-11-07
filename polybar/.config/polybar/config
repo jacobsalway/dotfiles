@@ -54,32 +54,20 @@ tray-position = right
 [module/i3]
 type = internal/i3
 
-; workspaces begin at 0
-ws-icon-0 = 1:one;
-ws-icon-1 = 2:two;
-ws-icon-2 = 3:three;
-ws-icon-3 = 4:four;
-ws-icon-4 = 5:five;
-ws-icon-5 = 6:six;
-ws-icon-6 = 7:seven;
-ws-icon-7 = 8:eight;
-ws-icon-8 = 9:nine;
-ws-icon-default = 
-
 strip-wsnumbers = true
 pin-workspaces = true
 index-sort = true
 
-label-focused = %index%: %icon%
+label-focused = %index%
 label-focused-padding = 2
 label-focused-foreground = ${colors.color13}
 label-focused-background = ${colors.bg-alt}
 label-focused-underline = ${colors.color5}
 
-label-unfocused = %index%: %icon%
+label-unfocused = %index%
 label-unfocused-padding = 2
 
-label-visible = %index%: %icon%
+label-visible = %index%
 label-visible-padding = 2
 
 [module/filesystem]
