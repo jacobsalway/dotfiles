@@ -56,7 +56,7 @@ URxvt.matcher.button:	1
 !URxvt.font: xft:Inconsolata:style=Regular:antialias=true:autohint=true:size=10
 URxvt.font: xft:Hack:size=9
 URxvt.letterSpace: -1
-URxvt.internalBorder: 9
+!URxvt.internalBorder: 9
 
 rofi.color-enabled:true
 rofi.color-window: #000, #000, #000
