@@ -150,7 +150,7 @@ label-connected = %downspeed%
 type = internal/date
 interval = 1
 
-time = "%a %d/%m/%y %I:%M:%S %p"
+time = "%a %d/%m/%y %H:%M:%S"
 time-alt = %s 
 
 label = %time%
