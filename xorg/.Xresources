@@ -1,39 +1,39 @@
 ! special
-*.foreground:   #d0c8c6
-*.background:   #3b3228
-*.cursorColor:  #d0c8c6
+*.foreground:   #f8f8f2
+*.background:   #272822
+*.cursorColor:  #f8f8f2
 
 ! black
-*.color0:       #3b3228
-*.color8:       #7e705a
+*.color0:       #272822
+*.color8:       #75715e
 
 ! red
-*.color1:       #cb6077
-*.color9:       #cb6077
+*.color1:       #f92672
+*.color9:       #f92672
 
 ! green
-*.color2:       #beb55b
-*.color10:      #beb55b
+*.color2:       #a6e22e
+*.color10:      #a6e22e
 
 ! yellow
-*.color3:       #f4bc87
-*.color11:      #f4bc87
+*.color3:       #f4bf75
+*.color11:      #f4bf75
 
 ! blue
-*.color4:       #8ab3b5
-*.color12:      #8ab3b5
+*.color4:       #66d9ef
+*.color12:      #66d9ef
 
 ! magenta
-*.color5:       #a89bb9
-*.color13:      #a89bb9
+*.color5:       #ae81ff
+*.color13:      #ae81ff
 
 ! cyan
-*.color6:       #7bbda4
-*.color14:      #7bbda4
+*.color6:       #a1efe4
+*.color14:      #a1efe4
 
 ! white
-*.color7:       #d0c8c6
-*.color15:      #f5eeeb
+*.color7:       #f8f8f2
+*.color15:      #f9f8f5
 
 ! font config
 Xft.lcdfilter: lcddefault
@@ -54,9 +54,9 @@ URxvt.cursorColor:white
 URxvt.cursorUnderline: true
 URxvt.matcher.button:	1
 !URxvt.font: xft:Inconsolata:style=Regular:antialias=true:autohint=true:size=10
-URxvt.font: xft:Hack:size=9
+URxvt.font: xft:DejaVu Sans Mono for Powerline:size=9
 URxvt.letterSpace: -1
-!URxvt.internalBorder: 9
+URxvt.internalBorder: 3
 
 rofi.color-enabled:true
 rofi.color-window: #000, #000, #000
