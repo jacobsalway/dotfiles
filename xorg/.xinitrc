@@ -47,7 +47,7 @@ xset s 3600 3600
 xset dpms 3600 3600 3600
 
 # restore wal colour scheme
-#wal -e -a "90" -b "#000000" -R
+wal -a "78" -b "#000000" -R
 
 # start i3
 exec i3
