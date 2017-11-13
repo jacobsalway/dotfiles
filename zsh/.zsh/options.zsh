@@ -22,5 +22,3 @@ setopt COMPLETE_IN_WORD
 setopt AUTO_PUSHD
 setopt PUSHD_IGNORE_DUPS
 setopt no_clobber
-
-(wal -a "78" -b "#000000" -r &)
