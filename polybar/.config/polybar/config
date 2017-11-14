@@ -43,9 +43,9 @@ module-margin-right = 1
 font-0 = Hack:size=9;3
 font-1 = FontAwesome:size=9;3
 
-modules-left = i3
-modules-center = mpd
-modules-right = volume temp cpu memory eth time
+modules-left = i3 
+modules-center = mpd 
+modules-right = home volume cpu memory eth time
 
 tray-position = right
 
@@ -72,12 +72,12 @@ label-visible-padding = 2
 
 [module/filesystem]
 type = internal/fs
-interval = 15
+interval = 5
 
 mount-0 = /
 mount-1 = /home
 
-label-mounted = %mountpoint%: %percentage_used%%
+label-mounted = %mountpoint%: %percentage_used%
 label-unmounted = %mountpoint% not mounted
 
 ; center
@@ -95,6 +95,13 @@ label-song-maxlen = 70
 label-song-ellipsis = true
 
 label-offline = mpd is offline
+
+[module/cmus]
+type = custom/script
+
+exec = sh ~/.config/polybar/cmus.sh
+exec if = pgrep -x cmus
+interval = 1
 
 ; right
 
