@@ -12,7 +12,6 @@ font pango:monospace 9
 set $mod Mod1
 set $sup Mod4
 set $term urxvt
-set $browser chromium
 
 # === external scripts ===
 
@@ -114,7 +113,7 @@ bindsym $mod+grave exec --no-startup-id flash.sh
 bindsym $mod+q kill
 bindsym $mod+Shift+q kill
 
-bindsym $mod+Shift+w exec --no-startup-id $browser
+bindsym $mod+Shift+w exec --no-startup-id $BROWSER
 
 bindsym $mod+Shift+e exit
 

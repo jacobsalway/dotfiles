@@ -13,3 +13,6 @@ export PATH=$HOME/bin:$PATH
 # .lesshst
 export LESSHISTSIZE=0
 export LESSHISTFILE=/dev/null
+
+# browser
+export BROWSER=firefox-nightly
