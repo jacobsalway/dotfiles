@@ -161,6 +161,12 @@ bindsym $mod+Shift+l move right 30
 bindsym $mod+z gaps outer current plus 2
 bindsym $mod+Shift+z gaps outer current minus 2
 
+bindsym $mod+c resize grow height 9; resize grow width 16
+
+bindsym $mod+v floating enable; resize set 1280 720
+
+bindsym $mod+b resize shrink height 9; resize shrink width 16
+
 bindsym $mod+n move position center
 bindsym $mod+Shift+n resize grow height 30; resize grow width 30; move position center
 
