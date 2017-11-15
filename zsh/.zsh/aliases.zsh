@@ -36,3 +36,5 @@ alias .....='cd ../../../..; ls'
 
 alias md='mkdir -p'
 alias rd='rmdir'
+
+alias please='sudo $(fc -ln -1)'
