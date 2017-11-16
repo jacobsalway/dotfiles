@@ -95,6 +95,11 @@ for_window [instance="math"] move position center
 for_window [instance="math"] move scratchpad
 exec --no-startup-id $term -name math -e R -q
 
+# calendar window
+for_window [instance="calendar"] floating enable
+for_window [instance="calendar"] resize set 800px 500px
+for_window [instance="calendar"] move position center
+
 # === basic bindings ===
 
 bindsym $mod+Return exec --no-startup-id $term
@@ -161,11 +166,9 @@ bindsym $mod+Shift+l move right 30
 bindsym $mod+z gaps outer current plus 2
 bindsym $mod+Shift+z gaps outer current minus 2
 
-bindsym $mod+c resize grow height 9; resize grow width 16
+bindsym $mod+c exec $term -name calendar -e calcurse 
 
 bindsym $mod+v floating enable; resize set 1280 720
-
-bindsym $mod+b resize shrink height 9; resize shrink width 16
 
 bindsym $mod+n move position center
 bindsym $mod+Shift+n resize grow height 30; resize grow width 30; move position center
