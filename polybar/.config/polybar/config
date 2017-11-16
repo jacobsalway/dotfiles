@@ -45,7 +45,7 @@ font-1 = FontAwesome:size=9;3
 
 modules-left = i3 
 modules-center = mpd 
-modules-right = home volume cpu memory eth time
+modules-right = filesystem home volume cpu memory eth time
 
 tray-position = right
 
@@ -76,9 +76,17 @@ type = internal/fs
 interval = 5
 
 mount-0 = /
-mount-1 = /home
 
-label-mounted = %mountpoint%: %percentage_used%
+label-mounted = %mountpoint% %percentage_used%
+label-unmounted = %mountpoint% not mounted
+
+[module/home]
+type = internal/fs
+interval = 5
+
+mount-0 = /home 
+
+label-mounted = ~ %percentage_used%
 label-unmounted = %mountpoint% not mounted
 
 ; center
@@ -111,7 +119,7 @@ type = internal/volume
 
 format-volume = <label-volume>
 
-label-volume = %percentage%
+label-volume = VOL %percentage%
 
 label-muted = Mute
 
