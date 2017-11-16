@@ -69,6 +69,7 @@ label-unfocused-padding = 2
 
 label-visible = %index%
 label-visible-padding = 2
+label-visible-background = ${colors.bg-alt}
 
 [module/filesystem]
 type = internal/fs
