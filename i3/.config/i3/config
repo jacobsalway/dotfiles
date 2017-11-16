@@ -181,6 +181,8 @@ bindsym $mod+Shift+m resize shrink height 30; resize shrink width 30; move posit
 # general workspace bindings
 bindsym $mod+Tab workspace back_and_forth
 
+bindsym $mod+Shift+Tab exec --no-startup-id python ~/bin/i3/cycle-workspace.py
+
 bindsym $mod+apostrophe split horizontal; exec $term
 bindsym $mod+slash split vertical; exec $term
 
