@@ -6,8 +6,8 @@ sources+="$ZSH_CONFIG/environment.zsh"
 sources+="$ZSH_CONFIG/options.zsh"
 sources+="$ZSH_CONFIG/prompt.zsh"
 sources+="$ZSH_CONFIG/functions.zsh"
-sources+="$ZSH_CONFIG/aliases.zsh"
 sources+="$ZSH_CONFIG/bindings.zsh"
+sources+="$ZSH_CONFIG/aliases.zsh"
 
 # completion config
 sources+="$ZSH_CONFIG/completion.zsh"
