@@ -132,7 +132,7 @@ bindsym $mod+Shift+y resize shrink width 30
 bindsym $mod+u [instance="dropdown"] scratchpad show; move position center
 bindsym $mod+Shift+u resize shrink height 30
 
-bindsym $mod+i exec $term -e htop
+bindsym $mod+i exec $term -e glances
 bindsym $mod+Shift+i resize grow height 30
 
 bindsym $mod+Shift+o resize grow width 30
