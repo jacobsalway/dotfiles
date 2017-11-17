@@ -77,7 +77,7 @@ interval = 5
 
 mount-0 = /
 
-label-mounted = %mountpoint% %percentage_used%
+label-mounted = ROOT %percentage_used%
 label-unmounted = %mountpoint% not mounted
 
 [module/home]
@@ -86,7 +86,7 @@ interval = 5
 
 mount-0 = /home 
 
-label-mounted = ~ %percentage_used%
+label-mounted = HOME %percentage_used%
 label-unmounted = %mountpoint% not mounted
 
 ; center
