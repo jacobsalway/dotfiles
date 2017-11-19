@@ -151,6 +151,8 @@ bindsym $mod+Shift+d gaps inner current set 0; gaps outer current set 0
 
 bindsym $mod+f fullscreen toggle
 
+bindsym $mod+Shift+g exec --no-startup-id gimp
+
 bindsym $mod+h focus left
 bindsym $mod+Shift+h move left 30
 
