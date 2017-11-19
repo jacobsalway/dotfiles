@@ -11,5 +11,7 @@ if [[ -n "$folder" ]]; then
     #cp $orig/$folder/* $des
     ln -s $orig/$folder $des
 else
-    echo "argument error"
+    for d in $orig/*/; do
+        echo "${d%/}"
+    done
 fi
