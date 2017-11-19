@@ -1,21 +1,5 @@
 # dotfiles
-these are my dotfiles, saved using stow
+these are my dotfiles, and can be installed using stow
 
-# installing
-install stow
+![picture](picture.png)
 
-`sudo pacman -S stow`
-
-navigate to your home directory
-
-`cd ~`
-
-clone the repo
-
-`git clone https://github.com/xorana/dotfiles.git`
-
-`cd dotfiles`
-
-use stow to install the specific themes
-
-`stow i3`
