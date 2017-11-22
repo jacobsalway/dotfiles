@@ -36,6 +36,5 @@ fi
 precmd () { vcs_info }
 
 
-PROMPT='[%F{5}%n%f@%F{5}%M%f] %~ ${vcs_info_msg_0_}
+PROMPT='%F{8}%D{%H:%M:%S}%f [%F{5}%n%f@%F{5}%M%f] %~ ${vcs_info_msg_0_}
 $ '
-RPROMPT='%F{8}%D{%H:%M:%S}%f'
