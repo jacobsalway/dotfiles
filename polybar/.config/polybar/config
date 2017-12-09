@@ -45,7 +45,7 @@ font-1 = FontAwesome:size=9;3
 
 modules-left = i3 
 modules-center = mpd 
-modules-right = filesystem home volume cpu memory eth time
+modules-right = volume filesystem home cpu memory eth time
 
 tray-position = right
 
@@ -60,16 +60,18 @@ index-sort = true
 
 label-focused = %index%
 label-focused-padding = 2
-label-focused-foreground = ${colors.color13}
-label-focused-background = ${colors.bg-alt}
-label-focused-underline = ${colors.color5}
+label-focused-foreground = ${colors.bg}
+label-focused-background = ${colors.color13}
+label-focused-underline = ${colors.color13}
 
 label-unfocused = %index%
 label-unfocused-padding = 2
 
 label-visible = %index%
 label-visible-padding = 2
+label-visible-foreground = ${colors.color13}
 label-visible-background = ${colors.bg-alt}
+label-visible-underline = ${colors.color13}
 
 [module/filesystem]
 type = internal/fs
@@ -117,9 +119,19 @@ interval = 1
 [module/volume]
 type = internal/volume
 
-format-volume = <label-volume>
+format-volume = <label-volume> <bar-volume>
 
-label-volume = VOL %percentage%
+label-volume = VOL
+
+bar-volume-width = 7
+
+bar-volume-gradient = true
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
 
 label-muted = Mute
 
