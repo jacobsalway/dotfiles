@@ -12,6 +12,7 @@ font pango:monospace 9
 set $mod Mod1
 set $sup Mod4
 set $term urxvt
+set $control --no-startup-id python ~/.config/i3/workspace_controller.py
 
 # === external scripts ===
 
@@ -108,9 +109,6 @@ bindsym $mod+Shift+Return exec $term -e tmux
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
-bindsym $mod+Escape workspace prev
-bindsym $mod+Shift+Escape exec i3-msg exit
-
 bindsym $mod+grave exec --no-startup-id flash.sh
 
 # === letter bindings ===
@@ -124,7 +122,6 @@ bindsym $mod+Shift+e exit
 
 bindsym $mod+r exec $term -e ranger
 
-bindsym $mod+t split toggle
 bindsym $mod+Shift+t gaps inner current set 6; gaps outer current set 3
 
 bindsym $mod+Shift+y resize shrink width 30
@@ -153,24 +150,12 @@ bindsym $mod+f fullscreen toggle
 
 bindsym $mod+Shift+g exec --no-startup-id gimp
 
-bindsym $mod+h focus left
-bindsym $mod+Shift+h move left 30
-
-bindsym $mod+j focus down
-bindsym $mod+Shift+j move down 30
-
-bindsym $mod+k focus up
-bindsym $mod+Shift+k move up 30
-
-bindsym $mod+l focus right
-bindsym $mod+Shift+l move right 30
-
 bindsym $mod+z gaps outer current plus 2
 bindsym $mod+Shift+z gaps outer current minus 2
 
 bindsym $mod+c exec $term -name calendar -e calcurse 
 
-bindsym $mod+v floating enable; resize set 1280 720
+bindsym $mod+Shift+v floating enable; resize set 1280 720
 
 bindsym $mod+n move position center
 bindsym $mod+Shift+n resize grow height 30; resize grow width 30; move position center
@@ -183,27 +168,68 @@ bindsym $mod+Shift+m resize shrink height 30; resize shrink width 30; move posit
 # general workspace bindings
 bindsym $mod+Tab workspace back_and_forth
 
-bindsym $mod+Shift+Tab exec --no-startup-id python ~/bin/i3/cycle-workspace.py
+bindsym $mod+apostrophe split horizontal
+bindsym $mod+slash split vertical
 
-bindsym $mod+apostrophe split horizontal; exec $term
-bindsym $mod+slash split vertical; exec $term
+# focus child and parent containers
+bindsym $mod+x focus parent
+bindsym $mod+Shift+x focus child
+
+# container layout
+bindsym $mod+b layout toggle split 
+bindsym $mod+Shift+b layout tabbed
+
+# change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left exec $control prev go
+bindsym $mod+Right exec $control next go
+bindsym $mod+Up exec $control up go
+bindsym $mod+Down exec $control down go
+
+# move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left exec $control prev move
+bindsym $mod+Shift+Right exec $control next move
+bindsym $mod+Shift+Up exec $control up move
+bindsym $mod+Shift+Down exec $control down move
 
 # set workspace names
-set $WS1 1:one
-set $WS2 2:two
-set $WS3 3:three
-set $WS4 4:four
-set $WS5 5:five
-set $WS6 6:six
-set $WS7 7:seven
-set $WS8 8:eight
-set $WS9 9:nine
+set $WS1 1
+set $WS2 2
+set $WS3 3
+
+# set workspace names
+set $WS1 1
+set $WS2 2
+set $WS3 3
+set $WS4 4
+set $WS5 5
+set $WS6 6
+set $WS7 7
+set $WS8 8
+set $WS9 9
 
 # set outputs
 # TOOD move these to a script eventually
 set $OP1 DP-5
 set $OP2 DP-2
 set $OP3 DVI-D-0
+set $OP4 DP-5
+set $OP5 DP-2
+set $OP6 DVI-D-0
+set $OP7 DP-5
+set $OP8 DP-2
+set $OP9 DVI-D-0
 
 # workspaces to monitors
 workspace $WS1 output $OP1
@@ -216,32 +242,33 @@ workspace $WS7 output $OP1
 workspace $WS8 output $OP2
 workspace $WS9 output $OP3
 
-# switch to workspaces
-bindsym $mod+1 workspace $WS1
-bindsym $mod+2 workspace $WS2
-bindsym $mod+3 workspace $WS3
-bindsym $mod+4 workspace $WS4
-bindsym $mod+5 workspace $WS5
-bindsym $mod+6 workspace $WS6
-bindsym $mod+7 workspace $WS7
-bindsym $mod+8 workspace $WS8
-bindsym $mod+9 workspace $WS9
+# switch to workspace
+bindsym $mod+1 exec $control go 1
+bindsym $mod+2 exec $control go 2
+bindsym $mod+3 exec $control go 3
+bindsym $mod+4 exec $control go 4
+bindsym $mod+5 exec $control go 5
+bindsym $mod+6 exec $control go 6
+bindsym $mod+7 exec $control go 7
+bindsym $mod+8 exec $control go 8
+bindsym $mod+9 exec $control go 9
+bindsym $mod+0 exec $control go 0
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $WS1; workspace $WS1
-bindsym $mod+Shift+2 move container to workspace $WS2; workspace $WS2
-bindsym $mod+Shift+3 move container to workspace $WS3; workspace $WS3
-bindsym $mod+Shift+4 move container to workspace $WS4; workspace $WS4
-bindsym $mod+Shift+5 move container to workspace $WS5; workspace $WS5
-bindsym $mod+Shift+6 move container to workspace $WS6; workspace $WS6
-bindsym $mod+Shift+7 move container to workspace $WS7; workspace $WS7
-bindsym $mod+Shift+8 move container to workspace $WS8; workspace $WS8
-bindsym $mod+Shift+9 move container to workspace $WS9; workspace $WS9
+bindsym $mod+Shift+1 exec $control move 1
+bindsym $mod+Shift+2 exec $control move 2
+bindsym $mod+Shift+3 exec $control move 3
+bindsym $mod+Shift+4 exec $control move 4
+bindsym $mod+Shift+5 exec $control move 5
+bindsym $mod+Shift+6 exec $control move 6
+bindsym $mod+Shift+7 exec $control move 7
+bindsym $mod+Shift+8 exec $control move 8
+bindsym $mod+Shift+9 exec $control move 9
+bindsym $mod+Shift+0 exec $control move 0
 
-# swap workspaces on monitors
-bindsym $sup+1 exec --no-startup-id python ~/.config/scripts/switch.py $OP1
-bindsym $sup+2 exec --no-startup-id python ~/.config/scripts/switch.py $OP2
-bindsym $sup+3 exec --no-startup-id python ~/.config/scripts/switch.py $OP3
+# swap workspaces
+bindsym $mod+comma move workspace to output left
+bindsym $mod+period move workspace to output right
 
 # === numpad ===
 
@@ -253,11 +280,6 @@ bindsym $sup+3 exec --no-startup-id python ~/.config/scripts/switch.py $OP3
 #bindsym $mod+Shift+Down     move down
 #bindsym $mod+Shift+Up       move up
 #bindsym $mod+Shift+Right    move right
-
-bindsym KP_Left focus left
-bindsym KP_Right focus right
-bindsym KP_Up focus up
-bindsym KP_Down focus down
 
 # === function keys ===
 
