@@ -147,6 +147,7 @@ bindsym $mod+d exec rofi -show run
 bindsym $mod+Shift+d gaps inner current set 0; gaps outer current set 0
 
 bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+f fullscreen global
 
 bindsym $mod+Shift+g exec --no-startup-id gimp
 
@@ -157,11 +158,16 @@ bindsym $mod+c exec $term -name calendar -e calcurse
 
 bindsym $mod+Shift+v floating enable; resize set 1280 720
 
-bindsym $mod+n move position center
-bindsym $mod+Shift+n resize grow height 30; resize grow width 30; move position center
+#bindsym $mod+n move position center
+#bindsym $mod+Shift+n resize grow height 30; resize grow width 30; move position center
+bindsym $mod+n exec $control down go
+bindsym $mod+Shift+n exec $control down move
 
-bindsym $mod+m exec $mute
-bindsym $mod+Shift+m resize shrink height 30; resize shrink width 30; move position center
+#bindsym $mod+m exec $mute
+#bindsym $mod+Shift+m resize shrink height 30; resize shrink width 30; move position center
+bindsym $mod+m exec $control up go
+bindsym $mod+Shift+m exec $control up move
+
 
 # === workspace bindings ===
 
