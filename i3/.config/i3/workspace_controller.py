@@ -97,6 +97,8 @@ else:
     workspace_rounded = max(math.ceil((workspace_val/3)-1),0)*3
     workspace_rounded += switch_number
     move_to(workspace_prefix + str(workspace_rounded))
+    # move foucs to workspace where window was moved
+    go_to(workspace_prefix + str(workspace_rounded))
   elif command == 'open':
     open_app(workspace_name)
   elif command == 'dynamic':
@@ -118,3 +120,5 @@ else:
         go_to(workspace_prefix + str(workspace_val))
       elif command2 == 'move':
         move_to(workspace_prefix + str(workspace_val))
+        # move focus to workspace where window was moved
+        go_to(workspace_prefix + str(workspace_val))
