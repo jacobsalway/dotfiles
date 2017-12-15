@@ -163,7 +163,6 @@ bindsym $mod+Shift+v floating enable; resize set 1280 720
 bindsym $mod+n exec $control down go
 bindsym $mod+Shift+n exec $control down move
 
-#bindsym $mod+m exec $mute
 #bindsym $mod+Shift+m resize shrink height 30; resize shrink width 30; move position center
 bindsym $mod+m exec $control up go
 bindsym $mod+Shift+m exec $control up move
@@ -312,6 +311,8 @@ bindsym $mod+Shift+bracketleft  exec $prev
 bindsym $mod+bracketright   exec $lilfor
 bindsym $mod+Shift+bracketright exec $next
 bindsym $mod+backslash exec $beg
+
+bindsym $mod+Shift+backslash exec $mute
 
 # === i3 specific ===
 
