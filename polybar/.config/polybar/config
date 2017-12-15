@@ -119,9 +119,9 @@ interval = 1
 [module/volume]
 type = internal/volume
 
-format-volume = <label-volume> <bar-volume>
+format-volume = <label-volume>
 
-label-volume = VOL
+label-volume = VOL %percentage%
 
 bar-volume-width = 7
 
