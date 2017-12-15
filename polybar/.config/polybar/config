@@ -101,7 +101,8 @@ port = 6600
 
 format-online = <label-song> - <label-time>
 
-label-song = %artist:0:20...% / %title:0:20:...% 
+;label-song = %artist:0:20...% / %title:0:20:...%
+label-song = %title:0:40:...%
 label-song-maxlen = 70
 label-song-ellipsis = true
 

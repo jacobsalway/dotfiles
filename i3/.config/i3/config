@@ -311,6 +311,7 @@ bindsym $mod+bracketleft    exec $lilbak
 bindsym $mod+Shift+bracketleft  exec $prev
 bindsym $mod+bracketright   exec $lilfor
 bindsym $mod+Shift+bracketright exec $next
+bindsym $mod+backslash exec $beg
 
 # === i3 specific ===
 
