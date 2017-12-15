@@ -45,7 +45,7 @@ font-1 = FontAwesome:size=9;3
 
 modules-left = i3 
 modules-center = mpd 
-modules-right = volume filesystem home cpu memory eth time
+modules-right = volume time
 
 tray-position = right
 
