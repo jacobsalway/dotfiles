@@ -8,6 +8,8 @@ fi
 SAVEHIST=10000
 HISTSIZE=12000
 
+setopt HIST_IGNORE_SPACE
+
 setopt share_history append_history extended_history hist_no_store hist_ignore_all_dups hist_ignore_space
 
 zle -C hist-complete complete-word _generic
