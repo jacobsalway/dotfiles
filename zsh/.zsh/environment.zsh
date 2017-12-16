@@ -15,4 +15,4 @@ export LESSHISTSIZE=0
 export LESSHISTFILE=/dev/null
 
 # browser
-export BROWSER=firefox-nightly
+export BROWSER=qutebrowser
