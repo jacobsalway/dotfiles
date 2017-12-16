@@ -98,7 +98,7 @@ type = internal/mpd
 host = ::1
 port = 6600
 
-format-online = <toggle> (<label-time>) <label-song>
+format-online = <toggle>  (<label-time>)  <label-song>
 label-song = %artist:0:45:...% - %title:0:45:...%
 label-song-maxlen = 70
 label-song-ellipsis = true
