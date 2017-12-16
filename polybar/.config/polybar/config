@@ -45,7 +45,7 @@ font-1 = FontAwesome:size=9;3
 
 modules-left = i3 
 modules-center = mpd 
-modules-right = volume time
+modules-right = volume filesystem home cpu memory eth time
 
 tray-position = right
 
@@ -101,8 +101,7 @@ port = 6600
 
 format-online = <label-song> - <label-time>
 
-;label-song = %artist:0:20...% / %title:0:20:...%
-label-song = %title:0:40:...%
+label-song = %artist:0:20...% / %title:0:20:...% 
 label-song-maxlen = 70
 label-song-ellipsis = true
 
@@ -120,9 +119,9 @@ interval = 1
 [module/volume]
 type = internal/volume
 
-format-volume = <label-volume>
+format-volume = <label-volume> <bar-volume>
 
-label-volume = VOL %percentage%
+label-volume = VOL
 
 bar-volume-width = 7
 
