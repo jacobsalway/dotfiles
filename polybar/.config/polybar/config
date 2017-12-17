@@ -98,12 +98,14 @@ type = internal/mpd
 host = ::1
 port = 6600
 
-format-online = <toggle>  <label-time>
+format-online =   <label-time>
 label-song = %artist:0:45:...% - %title:0:45:...%
 label-song-maxlen = 70
 label-song-ellipsis = true
 
 label-offline = mpd is offline
+
+label-time = %elapsed% / %total%
 
 icon-play = 
 icon-pause = 
