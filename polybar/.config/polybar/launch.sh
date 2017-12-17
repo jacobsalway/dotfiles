@@ -5,4 +5,4 @@ killall -q polybar
 while pgrep -x polybar > /dev/null; do sleep 1; done
 
 # launch
-for i in $(polybar -m | awk -F: '{print $1}'); do MONITOR=$i polybar top -c ~/.config/polybar/config & done
+for i in $(polybar -m | awk -F: '{print $1}'); do MONITOR=$i polybar main -c ~/.config/polybar/config & done

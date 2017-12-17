@@ -22,7 +22,7 @@ color15 = ${xrdb:color15}
 
 ; main bar
 
-[bar/top]
+[bar/main]
 monitor = ${env:MONITOR}
 width = 100%
 height = 30
@@ -32,7 +32,7 @@ foreground = #ffffff
 line-size = 2
 line-color = ${colors.color6}
 
-separator = |
+; separator = |
 
 spacing = 0
 padding-left = 2
@@ -45,7 +45,7 @@ font-1 = Material Icons:size=12;5
 
 modules-left = mpd current-song
 modules-center = i3
-modules-right = updates volume cpu memory eth time
+modules-right = updates volume filesystem time
 
 tray-position = right
 
@@ -78,7 +78,7 @@ interval = 25
 
 mount-0 = /
 
-label-mounted =  %percentage_used%%
+label-mounted = /: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 
 [module/home]
