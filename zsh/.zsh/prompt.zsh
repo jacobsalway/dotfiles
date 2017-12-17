@@ -24,7 +24,7 @@ zstyle ':vcs_info:*' unstagedstr 'unstaged '
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' actionformats '[%b|%a] '
 zstyle ':vcs_info:*' formats \
-  '{ %F{13}%b %F{8}%c%u%f}'
+  '%F{13}%b %F{8}%c%u%f'
 zstyle ':vcs_info:git*+set-message:*' hooks git-untracked
 zstyle ':vcs_info:*' enable git
 +vi-git-untracked() {
