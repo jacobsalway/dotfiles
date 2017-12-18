@@ -24,7 +24,7 @@ zstyle ':vcs_info:*' unstagedstr ' unstaged'
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' actionformats '[%b|%a] '
 zstyle ':vcs_info:*' formats \
-  '%F{8}%c%u%f%m [%F{13}%b%f]'
+  '%F{8}%c%u%m%f [%F{13}%b%f]'
 zstyle ':vcs_info:git*+set-message:*' hooks git-untracked git-st git-stash git-remotebranch
 zstyle ':vcs_info:*' enable git
 
@@ -78,7 +78,7 @@ function +vi-git-stash() {
     local -a stashes
 
     if [[ -s ${hook_com[base]}/.git/refs/stash ]] ; then
-        stashes=$(git stash list 2>/dev/null | wc -l)
+        stashes=$(git stash list 2>/dev/null | wc -l | tr -d '[:space:]')
         hook_com[misc]+=" (${stashes} stashed)"
     fi
 }
