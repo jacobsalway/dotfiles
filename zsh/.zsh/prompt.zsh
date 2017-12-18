@@ -2,32 +2,18 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 setopt prompt_subst
 
-function git_prompt_info {
-    git branch 2>/dev/null | awk '/^\*/ { print $2 }'
-}
-
-function git_dirty {
-    local FLAGS
-    FLAGS=('--porcelain')
-    local STATUS
-    STATUS=$(command git status ${FLAGS} 2> /dev/null | tail -n1)
-
-    if [[ -n $STATUS ]]; then
-        echo "*"
-    fi
-}
-
 autoload -Uz vcs_info
 
+zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' stagedstr ' staged'
 zstyle ':vcs_info:*' unstagedstr ' unstaged'
-zstyle ':vsc_info:*' get-revision true
-zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:*' actionformats '[%b|%a] '
-zstyle ':vcs_info:*' formats '%12.12i %F{8}%c%u%m%f [%F{13}%b%f]'
+zstyle ':vsc_info:git*:*' get-revision true
+zstyle ':vcs_info:git*:*' check-for-changes true
+zstyle ':vcs_info:git*' actionformats '[%b|%a] '
+zstyle ':vcs_info:git*' formats '%F{8}%c%u%m%f [%F{13}%b%f]'
 zstyle ':vcs_info:git*+set-message:*' hooks git-untracked git-st git-stash git-remotebranch
-zstyle ':vcs_info:*' enable git
 
+# Add indicator for untracked files
 function +vi-git-untracked() {
     if [[ $(git rev-parse --is-inside-work-tree 2> /dev/null) == 'true' ]] && \
     [[ $(git ls-files --other --directory --exclude-standard | sed q | wc -l | tr -d ' ') == 1 ]] ; then
@@ -35,6 +21,7 @@ function +vi-git-untracked() {
     fi
 }
 
+# Get remote branch name and commit count difference
 function +vi-git-st() {
     local ahead behind remote
     local -a gitstatus
@@ -74,7 +61,6 @@ function +vi-git-stash() {
         hook_com[misc]+=" (${stashes} stashed)"
     fi
 }
-
 
 precmd () { vcs_info }
 
