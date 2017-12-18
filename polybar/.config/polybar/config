@@ -132,7 +132,7 @@ interval = 1
 type = custom/script
 exec = ~/bin/polybar/pac-updates.sh
 click-middle = ~/bin/polybar/pac-updates.sh
-label =  %output%
+label =  %output%
 interval = 1000 
 
 [module/vpn]
