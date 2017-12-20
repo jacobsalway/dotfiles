@@ -1,5 +1,7 @@
 export EDITOR=vim
 
+machine = $(uname -s)
+
 alias cl='clear'
 
 alias aedit='$EDITOR $ZSH_CONFIG/aliases.zsh'
@@ -24,10 +26,17 @@ alias gf='git reflog'
 alias ~='cd ~'
 alias /='cd /'
 
-alias ls='ls -GFh'
-alias ll='ls -GFhl'
-alias lsa='ls -GFha'
-alias lla='ls -GFhla'
+if [[ ${machine} == "Darwin" ]]; then
+    alias ls='ls -GFh'
+    alias ll='ls -GFhl'
+    alias lsa='ls -GFha'
+    alias lla='ls -GFhla'
+else
+    alias ls='ls -GFh --color'
+    alias ll='ls -GFhl --color'
+    alias lsa='ls -GFha --color'
+    alias lla='ls -GFhla --color'
+fi
 
 alias ..='cd ..; ls'
 alias ...='cd ../..; ls'
