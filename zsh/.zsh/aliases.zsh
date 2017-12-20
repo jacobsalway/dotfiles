@@ -1,6 +1,6 @@
 export EDITOR=vim
 
-machine = $(uname -s)
+MACHINE="$(uname -s)"
 
 alias cl='clear'
 
@@ -26,7 +26,7 @@ alias gf='git reflog'
 alias ~='cd ~'
 alias /='cd /'
 
-if [[ ${machine} == "Darwin" ]]; then
+if [[ $MACHINE == "Darwin" ]]; then
     alias ls='ls -GFh'
     alias ll='ls -GFhl'
     alias lsa='ls -GFha'
