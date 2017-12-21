@@ -58,6 +58,15 @@ URxvt.font: xft:DejaVu Sans Mono for Powerline:size=9,xft:FontAwesome:size=9
 URxvt.letterSpace: -1
 URxvt.internalBorder: 3
 
+URxvt.perl-ext-common: default,matcher,resize-font,url-select,keyboard-select
+URxvt.colorURL: #4682B4
+URxvt.keysym.M-u: perl:url-select:select-next
+URxvt.url-select.launcher: /usr/bin/xdg-open
+URxvt.url-select.underline: true
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.resize-font.smaller: C-j
+URxvt.resize-font.bigger: C-k
+
 rofi.color-enabled:true
 rofi.color-window: #000, #000, #000
 rofi.color-normal: #111, #819396, #222, #008ed4, #ffffff
