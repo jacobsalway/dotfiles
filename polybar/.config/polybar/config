@@ -95,7 +95,7 @@ label-unmounted = %mountpoint% not mounted
 [module/mpd]
 type = internal/mpd
 
-host = ::1
+host = 127.0.0.1 
 port = 6600
 
 format-online =   <label-time>

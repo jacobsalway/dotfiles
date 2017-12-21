@@ -48,6 +48,6 @@ alias rd='rmdir'
 
 alias please='sudo $(fc -ln -1)'
 
-alias u='pacaur -Syu'
+alias u='trizen -Syu'
 
 alias jrnl=' jrnl'
