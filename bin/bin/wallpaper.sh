@@ -1,17 +1,17 @@
 #!/bin/bash
-
 folder=$1
 orig=$HOME/Wallpapers
 des=$HOME/.wallpapers
 
 if [[ -n "$folder" ]]; then
-    rm -r $des
-    #rm -f $des/*.jpg
-    #rm -f $des/*.png
-    #cp $orig/$folder/* $des
-    ln -s $orig/$folder $des
-else
-    for d in $orig/*/; do
-        echo "${d%/}"
-    done
+    rm -rf $des
+    mkdir $des
+    if [[ -f $folder ]]; then
+        cp $folder $des
+    elif [[ -d $folder ]]; then
+        cp $folder/* $des
+    else
+        echo "not valid"
+        exit 1
+    fi
 fi
