@@ -32,3 +32,5 @@ alias rd='rmdir'
 alias please='sudo $(fc -ln -1)'
 
 alias u='trizen -Syu'
+
+alias g='git'
