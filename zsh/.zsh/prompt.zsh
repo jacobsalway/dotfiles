@@ -65,5 +65,5 @@ precmd () { vcs_info }
 
 #PROMPT='%F{8}%D{%H:%M:%S}%f [%F{5}%n%f@%F{5}%M%f] %~ 
 PROMPT='[%F{5}%n%f@%F{5}%M%f] %~ 
-$ '
+%F{8}%D{%H:%M:%S}%f $ '
 RPROMPT='${vcs_info_msg_0_}'
