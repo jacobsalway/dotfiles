@@ -1,3 +1,5 @@
+source $ZSH_CONFIG/git.plugin.zsh
+
 export EDITOR=vim
 
 MACHINE="$(uname -s)"
@@ -32,5 +34,3 @@ alias rd='rmdir'
 alias please='sudo $(fc -ln -1)'
 
 alias u='trizen -Syu'
-
-alias g='git'

@@ -29,3 +29,5 @@
     rao = remote add origin
     ac = !git add . && git commit -a -m
     pushitgood = push -u origin --all
+[core]
+	pager = diff-so-fancy | less --tabs=4 -RFX
