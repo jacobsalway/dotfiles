@@ -30,7 +30,11 @@
     ac = !git add . && git commit -a -m
     pushitgood = push -u origin --all
 [core]
-	pager = diff-so-fancy | less --tabs=4 -RFX --pattern '^(Date|added|deleted|modified):'
+	pager = diff-so-fancy | less --tabs=4 -RFX
+[pager]
+    diff = diff-so-fancy | less --tabs=4 -RFX --pattern '^(Date|added|deleted|modified):'
+[interactive]
+    diffFilter = "diff-so-fancy"
 [diff-so-fancy]
 	stripLeadingSymbols = false
 	changeHunkIndicators = true
