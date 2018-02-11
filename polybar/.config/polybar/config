@@ -2,7 +2,7 @@
 
 [colors]
 bg = #c7000000
-bg-alt = #c7333333
+bg-alt = #c7222222
 color0 = ${xrdb:color0}
 color1 = ${xrdb:color1}
 color2 = ${xrdb:color2}
@@ -35,7 +35,7 @@ line-color = ${colors.color6}
 ; separator = |
 
 spacing = 0
-padding-left = 2
+padding-left = 0
 padding-right = 2
 module-margin-left = 1
 module-margin-right = 1
@@ -43,8 +43,8 @@ module-margin-right = 1
 font-0 = Hack:size=9;3
 font-1 = Material Icons:size=12;5
 
-modules-left = mpd current-song
-modules-center = i3
+modules-left = i3 mpd current-song
+; modules-center = i3
 modules-right = volume filesystem time
 
 tray-position = right
@@ -55,22 +55,21 @@ tray-position = right
 type = internal/i3
 
 strip-wsnumbers = true
-pin-workspaces = true
+; pin-workspaces = true
 index-sort = true
 
 label-focused = %index%
 label-focused-padding = 2
-label-focused-foreground = ${colors.color13}
 label-focused-background = ${colors.bg-alt}
-label-focused-underline = ${colors.color13}
+label-focused-underline = #ffffff
 
 label-unfocused = %index%
 label-unfocused-padding = 2
 
 label-visible = %index%
 label-visible-padding = 2
-label-visible-foreground = ${colors.color13}
-label-visible-underline = ${colors.color13}
+label-visible-background = ${colors.bg-alt}
+; label-visible-underline = ${colors.color14}
 
 [module/filesystem]
 type = internal/fs
