@@ -31,8 +31,8 @@ bindsym $mod+Shift+Delete exec "sh -c 'sleep 1; xset dpms force off'"
 # polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
-# redshift
-exec_always --no-startup-id redshift &
+# redshift (kill redshift first because it can bug out)
+# exec_always --no-startup-id redshift &
 
 # for alsa/amixer
 #set $inc --no-startup-id amixer sset Master 2%+
