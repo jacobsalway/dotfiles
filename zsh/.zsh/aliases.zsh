@@ -1,4 +1,4 @@
-source $ZSH_CONFIG/git.plugin.zsh
+source $ZSH_CONFIG/git-aliases.zsh
 
 export EDITOR=vim
 
