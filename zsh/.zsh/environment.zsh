@@ -9,6 +9,7 @@ export PATH=/usr/local/sbin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.local/sbin:$PATH
 export PATH=$HOME/bin:$PATH
+export PATH=/usr/local/homebrew/php/php72/bin:$PATH
 
 # .lesshst
 export LESSHISTSIZE=0
