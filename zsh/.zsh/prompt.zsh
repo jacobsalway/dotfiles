@@ -8,7 +8,7 @@ zstyle ':vcs_info:*' unstagedstr '%F{220}●%f'
 zstyle ':vsc_info:git*:*' get-revision true
 zstyle ':vcs_info:git*:*' check-for-changes true
 zstyle ':vcs_info:git*' actionformats '[%b|%a] '
-zstyle ':vcs_info:git*' formats '%F{8}%c%u%m%f [%b]'
+zstyle ':vcs_info:git*' formats '%F{8}%c%u%m%f [%F{13}%b%f]'
 zstyle ':vcs_info:git*+set-message:*' hooks git-untracked git-st git-stash git-remotebranch
 
 # Add indicator for untracked files
