@@ -14,12 +14,12 @@ alias /='cd /'
 if [[ $MACHINE == "Darwin" ]]; then
     alias ls='ls -GFh'
     alias ll='ls -GFhl'
-    alias lsa='ls -GFha'
+    alias la='ls -GFha'
     alias lla='ls -GFhla'
 else
     alias ls='ls -GFh --color'
     alias ll='ls -GFhl --color'
-    alias lsa='ls -GFha --color'
+    alias la='ls -GFha --color'
     alias lla='ls -GFhla --color'
 fi
 
