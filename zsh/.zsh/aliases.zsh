@@ -34,3 +34,5 @@ alias rd='rmdir'
 alias please='sudo $(fc -ln -1)'
 
 alias u='trizen -Syu'
+
+alias youtubedl='youtube-dl -ciw -f 140 --extract-audio --audio-format mp3 --embed-thumbnail --add-metadata -o "%(title)s.%(ext)s" -v '
