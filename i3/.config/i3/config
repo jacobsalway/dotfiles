@@ -94,6 +94,7 @@ for_window [instance="dropdown"] resize set 1000px 620px
 for_window [instance="dropdown"] move position center
 for_window [instance="dropdown"] move scratchpad
 exec --no-startup-id $term -name dropdown -e tmux
+bindsym $mod+Shift+u exec --no-startup-id $term -name dropdown -e tmux
 
 # arithmetic window
 for_window [instance="math"] floating enable
@@ -133,7 +134,7 @@ bindsym $mod+Shift+t gaps inner current set 6; gaps outer current set 3
 bindsym $mod+Shift+y resize shrink width 30
 
 bindsym $mod+u [instance="dropdown"] scratchpad show; move position center
-bindsym $mod+Shift+u resize shrink height 30
+#bindsym $mod+Shift+u resize shrink height 30
 
 bindsym $mod+i exec $term -e glances
 bindsym $mod+Shift+i resize grow height 30
