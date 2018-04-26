@@ -26,7 +26,7 @@ exec --no-startup-id compton -b --config ~/.config/compton/compton.conf
 bindsym $mod+Scroll_Lock exec --no-startup-id ~/bin/pick.sh &
 
 # screen off
-bindsym $mod+Shift+Delete exec "sh -c 'sleep 1; xset dpms force off'"
+bindsym $mod+Shift+Delete exec "sh -c 'i3lock -c 000000; sleep 1; xset dpms force off'"
 
 # polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
