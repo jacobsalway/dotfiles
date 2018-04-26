@@ -97,7 +97,7 @@ type = internal/mpd
 host = 127.0.0.1 
 port = 6600
 
-format-online =   <label-time>
+format-online = <toggle>  <label-time>
 label-song = %artist:0:45:...% - %title:0:45:...%
 label-song-maxlen = 70
 label-song-ellipsis = true
@@ -106,8 +106,8 @@ label-offline = mpd is offline
 
 label-time = %elapsed% / %total%
 
-icon-play = 
-icon-pause = 
+icon-play = 
+icon-pause = 
 
 [module/current-song]
 type = custom/script
