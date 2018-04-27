@@ -63,9 +63,8 @@ function +vi-git-stash() {
 precmd () { vcs_info }
 
 
-#PROMPT='%F{8}%D{%H:%M:%S}%f [%F{5}%n%f@%F{5}%M%f] %~ 
 PROMPT='[%F{12}%n%f@%F{12}%M%f] %~ 
 $ '
-#PROMPT='%F{12}%n%f@%F{12}%M%f:%F{8}%~%f 
-#$ '
+
+# git prompt
 RPROMPT='${vcs_info_msg_0_}'
