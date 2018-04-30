@@ -135,8 +135,11 @@ label =  %output%
 interval = 1000 
 
 [module/vpn]
-type = custom/text
-content = 
+type = custom/script
+exec = ~/bin/polybar/vpn-check.sh
+click-middle = ~/bin/polybar/vpn-check.sh
+label = %output%
+interval = 20
 
 [module/volume]
 type = internal/volume
