@@ -1,5 +1,5 @@
-if [ "0" == $(ifconfig | grep tun0 | wc -l) ]; then
-    echo "vpn active";
+if [ "0" == $(ip a | grep tun0 | wc -l) ]; then
+    echo "";
 else
-    echo "no vpn";
+    echo "";
 fi

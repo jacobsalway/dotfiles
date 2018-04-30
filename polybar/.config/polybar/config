@@ -45,7 +45,7 @@ font-1 = Material Icons:size=12;5
 
 modules-left = i3 mpd current-song
 ; modules-center = i3
-modules-right = volume filesystem time
+modules-right = volume vpn filesystem time
 
 tray-position = right
 
@@ -136,8 +136,8 @@ interval = 1000
 
 [module/vpn]
 type = custom/script
-exec = ~/bin/polybar/vpn-check.sh
-click-middle = ~/bin/polybar/vpn-check.sh
+exec = ~/bin/polybar/check-vpn.sh
+click-middle = ~/bin/polybar/check-vpn.sh
 label = %output%
 interval = 20
 
