@@ -23,7 +23,7 @@ exec --no-startup-id mpd
 exec --no-startup-id compton -b --config ~/.config/compton/compton.conf
 
 # wallpaper
-bindsym $mod+Scroll_Lock exec --no-startup-id ~/bin/pick.sh &
+bindsym $mod+Scroll_Lock exec --no-startup-id ~/bin/wallpaper/pick.sh &
 
 # screen off
 bindsym $mod+Shift+Delete exec "sh -c 'i3lock -c 000000; sleep 1; xset dpms force off'"
@@ -116,7 +116,7 @@ bindsym $mod+Shift+Return exec $term -e tmux
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
-bindsym $mod+grave exec --no-startup-id flash.sh
+bindsym $mod+grave exec --no-startup-id ~/bin/i3/flash.sh
 
 # === letter bindings ===
 
