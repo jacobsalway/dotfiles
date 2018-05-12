@@ -47,7 +47,7 @@ xset s 3600 3600
 xset dpms 3600 3600 3600
 
 # restore wal colour scheme
-wal -a "78" -b "#000000" -R
+wal -a "78" -b "#000000" -R -i "$(< "${HOME}/.cache/wal/wal")"
 
 # start i3
 exec i3
