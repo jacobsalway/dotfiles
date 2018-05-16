@@ -103,6 +103,8 @@ label-song-maxlen = 70
 label-song-ellipsis = true
 
 label-offline = mpd is offline
+; 
+format-stopped = 
 
 label-time = %elapsed% / %total%
 
