@@ -310,15 +310,20 @@ bindsym $mod+Shift+less     exec $bigdec
 
 # === media keys ===
 
-bindsym XF86AudioMute		exec $mute
-bindsym XF86AudioLowerVolume	exec $dec
-bindsym XF86AudioRaiseVolume	exec $inc
+bindsym XF86AudioMute exec $mute
+bindsym XF86AudioLowerVolume exec $dec
+bindsym XF86AudioRaiseVolume exec $inc
+bindsym XF86AudioPlay exec $pause
+bindsym XF86AudioPause exec $pause
+bindsym XF86AudioNext exec $next
+bindsym XF86AudioPrev exec $prev
+
 
 bindsym $mod+bracketleft    exec $lilbak
 bindsym $mod+Shift+bracketleft  exec $prev
 bindsym $mod+bracketright   exec $lilfor
 bindsym $mod+Shift+bracketright exec $next
-bindsym $mod+backslash exec $beg
+#bindsym $mod+backslash exec $beg
 
 bindsym $mod+backslash exec $mute
 bindsym $mod+Shift+backslash exec $audioswitch
