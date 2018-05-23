@@ -13,6 +13,7 @@ set $mod Mod1
 set $sup Mod4
 set $term urxvt
 set $control --no-startup-id python ~/.config/i3/workspace_controller.py
+set $audioswitch --no-startup-id python ~/bin/audio_switch.py
 
 # === external scripts ===
 
@@ -319,7 +320,8 @@ bindsym $mod+bracketright   exec $lilfor
 bindsym $mod+Shift+bracketright exec $next
 bindsym $mod+backslash exec $beg
 
-bindsym $mod+Shift+backslash exec $mute
+bindsym $mod+backslash exec $mute
+bindsym $mod+Shift+backslash exec $audioswitch
 
 # === i3 specific ===
 
