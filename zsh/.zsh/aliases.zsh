@@ -25,10 +25,10 @@ else
     alias lsa='ls -GFha'
 fi
 
-alias ..='cd ..; ls'
-alias ...='cd ../..; ls'
-alias ....='cd ../../..; ls'
-alias .....='cd ../../../..; ls'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias .....='cd ../../../..'
 
 alias md='mkdir -p'
 alias rd='rmdir'
