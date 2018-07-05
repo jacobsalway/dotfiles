@@ -43,7 +43,7 @@ module-margin-right = 1
 font-0 = Hack:size=9;3
 font-1 = Material Icons:size=12;5
 
-modules-left = i3 mpd current-song
+modules-left = i3 mpd
 ; modules-center = i3
 modules-right = volume vpn filesystem time
 
@@ -97,7 +97,7 @@ type = internal/mpd
 host = 127.0.0.1 
 port = 6600
 
-format-online = <toggle>  <label-time>
+format-online = <toggle>  <label-time>  <label-song>
 label-song = %artist:0:45:...% - %title:0:45:...%
 label-song-maxlen = 70
 label-song-ellipsis = true
