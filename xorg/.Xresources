@@ -57,8 +57,10 @@ URxvt.matcher.button:	1
 URxvt.font: xft:Hack:size=9,xft:NanumGothicCoding:size=9:style=Regular,xft:unifont:size=9
 URxvt.letterSpace: -1
 URxvt.internalBorder: 3
+URxvt.iso14755: False
+URxvt.iso14755_52: False
 
-URxvt.perl-ext-common: default,matcher,resize-font,url-select,keyboard-select
+URxvt.perl-ext-common: default,matcher,resize-font,url-select,keyboard-select,selection-to-clipboard
 URxvt.colorURL: #4682B4
 URxvt.keysym.M-u: perl:url-select:select-next
 URxvt.url-select.launcher: /usr/bin/xdg-open
@@ -66,6 +68,8 @@ URxvt.url-select.underline: true
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
 URxvt.resize-font.smaller: C-j
 URxvt.resize-font.bigger: C-k
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 
 rofi.color-enabled:true
 rofi.color-window: #000, #000, #000
