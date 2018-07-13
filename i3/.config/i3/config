@@ -32,6 +32,9 @@ bindsym $mod+Shift+Delete exec "sh -c 'i3lock -c 000000; sleep 1; xset dpms forc
 # polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
+# greenclip daemon
+exec --no-startup-id greenclip daemon
+
 # redshift (kill redshift first because it can bug out)
 # exec_always --no-startup-id redshift &
 
