@@ -297,7 +297,7 @@ bindsym $mod+period move workspace to output right
 # === function keys ===
 
 bindsym Print exec --no-startup-id scrot
-bindsym Shift+Print exec --no-startup-id scrot -u
+bindsym Shift+Print exec --no-startup-id deepin-screenshot
 
 bindsym $mod+plus       exec $inc
 bindsym $mod+Shift+plus     exec $biginc
