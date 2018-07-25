@@ -24,7 +24,8 @@ exec --no-startup-id mpd
 exec --no-startup-id compton -b --config ~/.config/compton/compton.conf
 
 # wallpaper
-bindsym $mod+Scroll_Lock exec --no-startup-id ~/bin/wallpaper/pick.sh &
+# bindsym $mod+Scroll_Lock exec --no-startup-id ~/bin/wallpaper/pick.sh &
+exec_always --no-startup-id feh --bg-fill ~/.wallpaper
 
 # screen off
 bindsym $mod+Shift+Delete exec "sh -c 'i3lock -c 000000; sleep 1; xset dpms force off'"
