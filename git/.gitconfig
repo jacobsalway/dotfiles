@@ -34,3 +34,5 @@
 	stripLeadingSymbols = false
 	changeHunkIndicators = true
 	markEmptyLines = false
+[include]
+    path = ~/.gituser
