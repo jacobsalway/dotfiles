@@ -1,0 +1,6 @@
+#!/bin/bash
+
+wal -a "78" -b "#000000" -c -i $HOME/.wallpaper
+
+# get random file
+# feh --bg-fill $(shuf -n1 -e $HOME/.wallpapers/*)
