@@ -9,8 +9,8 @@ if [ "$2" == "up" ]; then
 elif [ "$2" == "down" ]; then
     final=$(($cur-3))
 else
-    ceil=`echo "$cur/3-1" | bc`
-    max=$(($ceil > 0 ? $ceil : 0))
+    floor=`echo "($cur-1)/3" | bc`
+    max=$(($floor > 0 ? $floor : 0))
     mult=$(($max*3))
     final=$(($mult+$2))
 fi
