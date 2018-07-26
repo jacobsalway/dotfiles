@@ -12,7 +12,7 @@ font pango:monospace 9
 set $mod Mod1
 set $sup Mod4
 set $term urxvt
-set $control --no-startup-id python ~/.config/i3/workspace_controller.py
+set $control --no-startup-id ~/.config/i3/workspace_controller.sh
 set $audioswitch --no-startup-id python ~/bin/audio_switch.py
 
 # === external scripts ===
@@ -175,12 +175,12 @@ bindsym $mod+Shift+v floating enable; resize set 1280 720
 
 #bindsym $mod+n move position center
 #bindsym $mod+Shift+n resize grow height 30; resize grow width 30; move position center
-bindsym $mod+n exec $control down go
-bindsym $mod+Shift+n exec $control down move
+bindsym $mod+n exec $control go down
+bindsym $mod+Shift+n exec $control move down
 
 #bindsym $mod+Shift+m resize shrink height 30; resize shrink width 30; move position center
-bindsym $mod+m exec $control up go
-bindsym $mod+Shift+m exec $control up move
+bindsym $mod+m exec $control go up
+bindsym $mod+Shift+m exec $control move up
 
 
 # === workspace bindings ===
@@ -205,23 +205,11 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left exec $control prev go
-bindsym $mod+Right exec $control next go
-bindsym $mod+Up exec $control up go
-bindsym $mod+Down exec $control down go
-
 # move focused window
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left exec $control prev move
-bindsym $mod+Shift+Right exec $control next move
-bindsym $mod+Shift+Up exec $control up move
-bindsym $mod+Shift+Down exec $control down move
 
 # set workspace names
 set $WS1 1
