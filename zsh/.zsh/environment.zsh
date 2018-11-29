@@ -17,3 +17,7 @@ export LESSHISTFILE=/dev/null
 
 # browser
 export BROWSER=chromium
+
+# fzf
+# export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+export FZF_DEFAULT_COMMAND="fd --type file --follow --color=always"

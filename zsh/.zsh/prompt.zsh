@@ -8,7 +8,7 @@ zstyle ':vcs_info:*' unstagedstr 'U'
 zstyle ':vsc_info:git*:*' get-revision true
 zstyle ':vcs_info:git*:*' check-for-changes true
 zstyle ':vcs_info:git*' actionformats '[%b|%a] '
-zstyle ':vcs_info:git*' formats '%F{8}%c%u%m%f [%F{12}%b%f]'
+zstyle ':vcs_info:git*' formats '%F{8}%c%u%m%f [%F{14}%b%f]'
 zstyle ':vcs_info:git*+set-message:*' hooks git-untracked git-st git-stash git-remotebranch
 
 # Add indicator for untracked files
@@ -63,7 +63,7 @@ function +vi-git-stash() {
 precmd () { vcs_info }
 
 
-PROMPT='[%F{12}%n%f@%F{12}%M%f] %~ 
+PROMPT='[%F{14}%n%f@%F{14}%M%f] %~ 
 $ '
 
 # git prompt
