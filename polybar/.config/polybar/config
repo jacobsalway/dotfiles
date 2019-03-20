@@ -25,14 +25,12 @@ color15 = ${xrdb:color15}
 [bar/main]
 monitor = ${env:MONITOR}
 width = 100%
-height = 30
+height = 40
 
 background = ${colors.bg}
 foreground = #ffffff
 line-size = 2
 line-color = ${colors.color6}
-
-; separator = |
 
 spacing = 0
 padding-left = 0
@@ -40,22 +38,21 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 1
 
-font-0 = Hack:size=9;3
-font-1 = Material Icons:size=12;5
+font-0 = Hack:size=13;4
+font-1 = FontAwesome5Free:style=Solid:pixelsize=14;3
+font-2 = FontAwesome5Brands:style=Solid:pixelsize=14;3
 
-modules-left = i3 mpd
-; modules-center = i3
-modules-right = volume vpn filesystem time
+modules-left = i3
+modules-right = network volume backlight battery time
 
 tray-position = right
 
-; left
+; modules
 
 [module/i3]
 type = internal/i3
 
 strip-wsnumbers = true
-; pin-workspaces = true
 index-sort = true
 
 label-focused = %index%
@@ -69,27 +66,33 @@ label-unfocused-padding = 2
 label-visible = %index%
 label-visible-padding = 2
 label-visible-background = ${colors.bg-alt}
-; label-visible-underline = ${colors.color14}
 
-[module/filesystem]
-type = internal/fs
-interval = 25
+[module/battery]
+type = internal/battery
 
-mount-0 = /
+battery = BAT0
+adapter = AC
+full-at = 98
 
-label-mounted = /: %percentage_used%%
-label-unmounted = %mountpoint% not mounted
+format-charging = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
 
-[module/home]
-type = internal/fs
-interval = 5
+label-charging = %percentage%%+
+label-discharging = %percentage%%
+label-full =  Full
 
-mount-0 = /home
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
 
-label-mounted = HOME %percentage_used%
-label-unmounted = %mountpoint% not mounted
-
-; center
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 750
 
 [module/mpd]
 type = internal/mpd
@@ -103,7 +106,6 @@ label-song-maxlen = 70
 label-song-ellipsis = true
 
 label-offline = mpd is offline
-; 
 format-stopped = 
 
 label-time = %elapsed% / %total%
@@ -120,22 +122,6 @@ click-right = mpc next
 label = %output%
 interval = 1
 
-[module/cmus]
-type = custom/script
-
-exec = sh ~/.config/polybar/cmus.sh
-exec if = pgrep -x cmus
-interval = 1
-
-; right
-
-[module/updates]
-type = custom/script
-exec = ~/bin/polybar/pac-updates.sh
-click-middle = ~/bin/polybar/pac-updates.sh
-label =  %output%
-interval = 1000 
-
 [module/vpn]
 type = custom/script
 exec = ~/bin/polybar/check-vpn.sh
@@ -144,62 +130,17 @@ label = %output%
 interval = 20
 
 [module/volume]
-type = internal/volume
+type = internal/pulseaudio
+format-volume =  <label-volume>
+format-muted =  <label-muted>
 
-format-volume = <label-volume> <bar-volume>
-
-label-volume = 
-
-bar-volume-width = 10
-
-bar-volume-gradient = true
-bar-volume-indicator = |
-bar-volume-indicator-font = 2
-bar-volume-fill = =
-bar-volume-fill-font = 2
-bar-volume-empty = ─
-bar-volume-empty-font = 2
-
+label-volume = %percentage%%
 label-muted = Mute
 
-[module/fs]
-type = internal/fs
-mount-0 = /
-interval = 10
-
-format-mounted = <label-mounted>
-label-mounted = %used% / %total%
-
-[module/temp]
-type = internal/temperature
-thermal-zone = 3
-warn-temperature = 60
-interval = 3
-
-format = <label>
-format-warn = "WARN <label-warn>"
-
-label = %temperature%
-label-warn = %temperature%
-
-[module/cpu]
-type = internal/cpu
-interval = 2
-format = <label>
-label = "CPU %percentage%"
-
-[module/memory]
-type = internal/memory
-interval = 10
-format = <label>
-label = "RAM %percentage_used%"
-
-[module/eth]
-type = internal/network
-interface = enp2s0
-interval = 3
-
-label-connected = %downspeed%
+[module/backlight]
+type = internal/backlight
+card = intel_backlight
+label =  %percentage%%
 
 [module/time]
 type = internal/date
@@ -209,3 +150,13 @@ time = %a %d %b %H:%M:%S
 time-alt = "%a %d/%m/%y %H:%M:%S"
 
 label = %time%
+
+[module/network]
+type = internal/network
+interface = wlp2s0
+
+format-connected =  <label-connected>
+format-disconnected = <label-disconnected>
+
+label-connected = %essid%
+label-disconnected = not connected
