@@ -12,7 +12,6 @@ font pango:monospace 9
 set $mod Mod1
 set $sup Mod4
 set $term urxvt
-set $control --no-startup-id ~/.config/i3/workspace_controller.sh
 set $audioswitch --no-startup-id python ~/bin/audio_switch.py
 
 # === external scripts ===
@@ -33,14 +32,10 @@ bindsym $mod+Shift+Delete exec "sh -c 'i3lock -c 000000; sleep 1; xset dpms forc
 # polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
-# greenclip daemon
-exec --no-startup-id greenclip daemon
+exec_always --no-startup-id nm-applet
 
 # owncloud 
 # exec --no-startup-id owncloud
-
-# redshift (kill redshift first because it can bug out)
-# exec_always --no-startup-id redshift &
 
 # for alsa/amixer
 #set $inc --no-startup-id amixer sset Master 2%+
@@ -227,67 +222,31 @@ set $WS7 7
 set $WS8 8
 set $WS9 9
 
-# set outputs
-# TOOD move these to a script eventually
-set $OP1 DP-3
-set $OP2 DP-4
-set $OP3 DVI-D-0
-set $OP4 DP-3
-set $OP5 DP-4
-set $OP6 DVI-D-0
-set $OP7 DP-3
-set $OP8 DP-4
-set $OP9 DVI-D-0
-
-# workspaces to monitors
-workspace $WS1 output $OP1
-workspace $WS2 output $OP2
-workspace $WS3 output $OP3
-workspace $WS4 output $OP1
-workspace $WS5 output $OP2
-workspace $WS6 output $OP3
-workspace $WS7 output $OP1
-workspace $WS8 output $OP2
-workspace $WS9 output $OP3
-
 # switch to workspace
-bindsym $mod+1 exec $control go 1
-bindsym $mod+2 exec $control go 2
-bindsym $mod+3 exec $control go 3
-bindsym $mod+4 exec $control go 4
-bindsym $mod+5 exec $control go 5
-bindsym $mod+6 exec $control go 6
-bindsym $mod+7 exec $control go 7
-bindsym $mod+8 exec $control go 8
-bindsym $mod+9 exec $control go 9
-bindsym $mod+0 exec $control go 0
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
 
 # move focused container to workspace
-bindsym $mod+Shift+1 exec $control move 1
-bindsym $mod+Shift+2 exec $control move 2
-bindsym $mod+Shift+3 exec $control move 3
-bindsym $mod+Shift+4 exec $control move 4
-bindsym $mod+Shift+5 exec $control move 5
-bindsym $mod+Shift+6 exec $control move 6
-bindsym $mod+Shift+7 exec $control move 7
-bindsym $mod+Shift+8 exec $control move 8
-bindsym $mod+Shift+9 exec $control move 9
-bindsym $mod+Shift+0 exec $control move 0
+bindsym $mod+Shift+1 move container to workspace 1; workspace 1
+bindsym $mod+Shift+2 move container to workspace 2; workspace 2
+bindsym $mod+Shift+3 move container to workspace 3; workspace 3
+bindsym $mod+Shift+4 move container to workspace 4; workspace 4
+bindsym $mod+Shift+5 move container to workspace 5; workspace 5
+bindsym $mod+Shift+6 move container to workspace 6; workspace 6
+bindsym $mod+Shift+7 move container to workspace 7; workspace 7
+bindsym $mod+Shift+8 move container to workspace 8; workspace 8
+bindsym $mod+Shift+9 move container to workspace 9; workspace 9
 
 # swap workspaces
 bindsym $mod+comma move workspace to output left
 bindsym $mod+period move workspace to output right
-
-# === numpad ===
-
-#bindsym $mod+Left       focus left
-#bindsym $mod+Down       focus down
-#bindsym $mod+Up         focus up
-#bindsym $mod+Right      focus right
-#bindsym $mod+Shift+Left     move left
-#bindsym $mod+Shift+Down     move down
-#bindsym $mod+Shift+Up       move up
-#bindsym $mod+Shift+Right    move right
 
 # === function keys ===
 
@@ -312,6 +271,8 @@ bindsym XF86AudioPlay exec $pause
 bindsym XF86AudioPause exec $pause
 bindsym XF86AudioNext exec $next
 bindsym XF86AudioPrev exec $prev
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
 
 
 bindsym $mod+bracketleft    exec $lilbak
