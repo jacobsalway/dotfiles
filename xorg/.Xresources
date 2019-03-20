@@ -36,13 +36,13 @@
 *.color15:      #f9f8f5
 
 ! font config
-Xft.lcdfilter: lcddefault
-Xft.antialias: true
 Xft.autohint: 0
-Xft.hinting: true
+Xft.lcdfilter: lcddefault
 Xft.hintstyle: hintslight
+Xft.hinting: 1
+Xft.antialias: 1
 Xft.rgba: rgb
-Xft.dpi: 96
+Xft.dpi: 135
 
 URxvt.intensityStyles:false
 URxvt.foreground:#ffffff
@@ -53,10 +53,8 @@ URxvt.cursorColor:white
 !URxvt.cursorBlink: true
 URxvt.cursorUnderline: true
 URxvt.matcher.button:	1
-!URxvt.font: xft:Inconsolata:style=Regular:antialias=true:autohint=true:size=10
-URxvt.font: xft:Hack:size=9,xft:NanumGothicCoding:size=9:style=Regular,xft:unifont:size=9
-URxvt.letterSpace: -1
-URxvt.internalBorder: 3
+URxvt.font: xft:Ubuntu Mono derivative Powerline:size=11,xft:unifont:size=11,xft:FontAwesome:size=11
+URxvt.internalBorder: 6
 URxvt.iso14755: False
 URxvt.iso14755_52: False
 
