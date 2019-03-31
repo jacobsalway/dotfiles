@@ -1,0 +1,184 @@
+# outputs
+
+# xpos: (2560-2560*0.75)/2
+# ypos: 1440/0.75
+output eDP-1 pos 320 1920 res 2560x1440
+output HDMI-A-1 pos 0 0 res 2560x1440
+output HDMI-A-1 scale 0.75
+
+# variables
+
+hide_edge_borders both
+default_border none
+gaps inner 6
+gaps outer 3
+
+set $mod Mod1
+set $left h
+set $down j
+set $up k
+set $right l
+
+set $term urxvt
+set $menu rofi -show run | xargs swaymsg exec --
+
+# for alsa/amixer
+#set $inc --no-startup-id amixer sset Master 2%+
+#set $biginc --no-startup-id amixer sset Master 5%+
+#set $dec --no-startup-id amixer sset Master 2%-
+#set $bigdec --no-startup-id amixer sset Master 5%-
+#set $mute --no-startup-id amixer sset Master toggle
+#set $truemute --no-startup-id amixer sset Master mute
+
+# for pulseaudio/pamixer
+set $inc --no-startup-id pamixer --allow-boost -i 2
+set $biginc --no-startup-id pamixer --allow-boost -i 6
+set $dec --no-startup-id pamixer --allow-boost -d 2
+set $bigdec --no-startup-id pamixer --allow-boost -d 6
+set $mute --no-startup-id pamixer --allow-boost -t
+set $micmute --no-startup-id pamixer --allow-boost -t
+set $truemute --no-startup-id pamixer -m
+
+# for mpc
+set $music --no-startup-id $term -e ncmpcpp
+set $pause --no-startup-id mpc toggle
+set $trupause --no-startup-id mpc pause
+set $next --no-startup-id mpc next
+set $prev --no-startup-id mpc prev
+set $lilfor --no-startup-id mpc seek +10
+set $bigfor --no-startup-id mpc seek +120
+set $lilbak --no-startup-id mpc seek -10
+set $bigbak --no-startup-id mpc seek -120
+set $beg --no-startup-id mpc seek 0%
+
+#exec_always --no-startup-id nm-applet
+exec xrdb ~/.Xresources
+
+output * bg ~/.wallpaper fill
+
+# outputs/workspaces
+
+# default to external display if plugged in
+#workspace 1:web output HDMI-A-1
+#workspace 2:term output HDMI-A-1
+#workspace 3:dev output HDMI-A-1
+#workspace 4:music output HDMI-A-1
+#workspace 5:other output eDP-1
+workspace 1 output HDMI-A-1
+workspace 2 output HDMI-A-1
+workspace 3 output HDMI-A-1
+workspace 4 output HDMI-A-1
+workspace 5 output eDP-1
+workspace 6 output HDMI-A-1
+workspace 7 output HDMI-A-1
+workspace 8 output HDMI-A-1
+workspace 9 output HDMI-A-1
+workspace 10 output HDMI-A-1
+
+# basics
+
+bindsym $mod+Return exec --no-startup-id $term
+bindsym $mod+Shift+return exec $term -e tmux
+bindsym $mod+q kill
+bindsym $mod+d exec $menu
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+e exec swaymsg exit
+
+# moving around
+
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+
+# workspaces
+
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
+
+bindsym $mod+Shift+1 move container to workspace 1
+bindsym $mod+Shift+2 move container to workspace 2
+bindsym $mod+Shift+3 move container to workspace 3
+bindsym $mod+Shift+4 move container to workspace 4
+bindsym $mod+Shift+5 move container to workspace 5
+bindsym $mod+Shift+6 move container to workspace 6
+bindsym $mod+Shift+7 move container to workspace 7
+bindsym $mod+Shift+8 move container to workspace 8
+bindsym $mod+Shift+9 move container to workspace 9
+bindsym $mod+Shift+0 move container to workspace 10
+
+# layout
+
+bindsym $mod+Tab workspace back_and_forth
+
+bindsym $mod+apostrophe splith
+bindsym $mod+slash splitv
+
+bindsym $mod+f fullscreen
+
+# swap focus between tiling and floating
+bindsym $mod+space focus mode_toggle
+
+bindsym $mod+x focus parent
+bindsym $mod+Shift+x focus child
+
+bindsym $mod+b layout toggle split
+bindsym $mod+Shift+b layout tabbed
+
+# xf86
+bindsym XF86AudioMute exec $mute
+bindsym XF86AudioLowerVolume exec $dec
+bindsym XF86AudioRaiseVolume exec $inc
+bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5
+bindsym Shift+XF86MonBrightnessUp exec --no-startup-id light -A 1
+bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5
+bindsym Shift+XF86MonBrightnessDown exec --no-startup-id light -U 1
+
+# gaps
+
+bindsym $mod+Shift+t gaps inner current set 6; gaps outer current set 3
+bindsym $mod+Shift+d gaps inner current set 0; gaps outer current set 0
+bindsym $mod+z gaps outer current plus 2
+bindsym $mod+Shift+z gaps outer current minus 2
+bindsym $mod+s gaps inner current plus 2
+bindsym $mod+Shift+s gaps inner current minus 2
+
+# resize
+mode "resize" {
+    bindsym $left resize shrink width 10px
+    bindsym $down resize grow height 10px
+    bindsym $up resize shrink height 10px
+    bindsym $right resize grow width 10px
+}
+
+# bar
+
+bar {
+    swaybar_command waybar
+}
+
+# input
+
+input "1:1:AT_Translated_Set_2_keyboard" {
+    xkb_options caps:swapescape
+}
+
+input * {
+    tap enabled
+    natural_scroll enabled
+    accel_profile adaptive
+    pointer_accel 0.4
+}
