@@ -1,0 +1,64 @@
+{
+    "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar at the bottom of your screen
+    "height": 40, // Waybar height
+    // "width": 1280, // Waybar width
+    // Choose the order of the modules
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-right": ["pulseaudio", "network", "backlight", "battery", "clock", "tray"],
+    // Modules configuration
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "format": "{icon}{name}",
+        "format-icons": {
+            "1": "\uf268 ",
+            "2": "\uf120 ",
+            "3": "\uf837 ",
+            "4": "\uf1bc ",
+            "default": ""
+        }
+    },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        "interval": 1,
+        "format": "{:%a %d %b %H:%M:%S}"
+    },
+    "backlight": {
+        "format": "<span font='FontAwesom5Free'>{icon}</span> {percent}%",
+        "format-icons": ["\uf185"]
+    },
+    "battery": {
+        "states": {
+            "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "<span font='FontAwesome5Free'>{icon}</span> {capacity}%",
+        "format-full": "<span font='FontAwesome5Free'>{icon}</span> Full",
+        "format-charging": "<span font='FontAwesome5Free'>{icon}</span> {capacity}%+",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"]
+    },
+    "network": {
+        // "interface": "wlp2s0", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ({signalStrength}%)",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr}",
+        "format-disconnected": "Disconnected"
+    },
+    "pulseaudio": {
+        //"scroll-step": 1,
+        "format": "<span font='FontAwesome5Free'>{icon}</span> {volume}%",
+        "format-muted": "Muted",
+        "format-icons": {
+            "headphones": "\uf025",
+            "default": ["\uf028"]
+        }
+    }
+}

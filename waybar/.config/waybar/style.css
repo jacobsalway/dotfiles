@@ -1,0 +1,55 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: Hack;
+    font-size: 20px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(0, 0, 0, 0.78);
+    color: white;
+}
+
+#window {
+    font-weight: bold;
+    font-family: "Ubuntu";
+}
+
+#workspaces button {
+    padding: 0 10px;
+    background: transparent;
+    color: white;
+    border-top: 2px solid transparent;
+}
+
+#workspaces.visible {
+    background: rgba(188, 188, 188, 0.78);
+}
+
+#workspaces button.visible {
+    border-top: 2px solid rgb(255, 255, 255);
+}
+
+#workspaces button.focused {
+    color: rgb(246, 201, 169);
+    border-top: 2px solid rgb(246, 201, 169);
+}
+
+#mode {
+    background: #64727D;
+    border-bottom: 3px solid white;
+}
+
+#backlight, #battery, #network, #pulseaudio, #tray, #mode {
+    padding: 0 5px;
+    margin: 0 15px 0 0;
+}
+
+#clock {
+    padding-right: 10px
+}
+
+#battery icon {
+    color: red;
+}
