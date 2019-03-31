@@ -53,7 +53,7 @@ URxvt.cursorColor:white
 !URxvt.cursorBlink: true
 URxvt.cursorUnderline: true
 URxvt.matcher.button:	1
-URxvt.font: xft:Ubuntu Mono derivative Powerline:size=11,xft:unifont:size=11,xft:FontAwesome:size=11
+URxvt.font: xft:Ubuntu Mono derivative Powerline:size=10,xft:unifont:size=10,xft:FontAwesome:size=10
 URxvt.internalBorder: 6
 URxvt.iso14755: False
 URxvt.iso14755_52: False
