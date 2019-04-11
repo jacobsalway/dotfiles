@@ -52,6 +52,7 @@ set $bigbak --no-startup-id mpc seek -120
 set $beg --no-startup-id mpc seek 0%
 
 #exec_always --no-startup-id nm-applet
+exec_always --no-startup-id nextcloud
 exec xrdb ~/.Xresources
 
 # program bindings
