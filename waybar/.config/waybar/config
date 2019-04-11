@@ -9,7 +9,7 @@
     // Modules configuration
     "sway/workspaces": {
         "disable-scroll": true,
-        "format": "{icon}{name}",
+        "format": "{name}",
         "format-icons": {
             "1": "\uf268 ",
             "2": "\uf120 ",
@@ -30,7 +30,7 @@
         "format": "{:%a %d %b %H:%M:%S}"
     },
     "backlight": {
-        "format": "<span font='FontAwesom5Free'>{icon}</span> {percent}%",
+        "format": "<span font='FontAwesome5Free'>{icon}</span> {percent}%",
         "format-icons": ["\uf185"]
     },
     "battery": {

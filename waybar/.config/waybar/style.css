@@ -11,11 +11,6 @@ window#waybar {
     color: white;
 }
 
-#window {
-    font-weight: bold;
-    font-family: "Ubuntu";
-}
-
 #workspaces button {
     padding: 0 10px;
     background: transparent;
