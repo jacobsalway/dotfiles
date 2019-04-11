@@ -57,6 +57,9 @@ exec xrdb ~/.Xresources
 # program bindings
 bindsym $mod+r exec $term -e ranger
 
+# screen lock
+bindsym $mod+Shift+delete exec --no-startup-id swaylock
+
 output * bg ~/.wallpaper fill
 
 # outputs/workspaces
