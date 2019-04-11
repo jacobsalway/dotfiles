@@ -41,7 +41,7 @@ set $truemute --no-startup-id pamixer -m
 
 # for mpc
 set $music --no-startup-id $term -e ncmpcpp
-set $pause --no-startup-id mpc toggle
+set $toggle --no-startup-id mpc toggle
 set $trupause --no-startup-id mpc pause
 set $next --no-startup-id mpc next
 set $prev --no-startup-id mpc prev
@@ -144,7 +144,16 @@ bindsym $mod+Shift+x focus child
 bindsym $mod+b layout toggle split
 bindsym $mod+Shift+b layout tabbed
 
+# music
+
+bindsym $mod+p exec $toggle
+bindsym $mod+bracketleft exec $lilbak
+bindsym $mod+Shift+bracketleft exec $prev
+bindsym $mod+bracketright exec $lilfor
+bindsym $mod+Shift+bracketright exec $next
+
 # xf86
+
 bindsym XF86AudioMute exec $mute
 bindsym XF86AudioLowerVolume exec $dec
 bindsym XF86AudioRaiseVolume exec $inc
