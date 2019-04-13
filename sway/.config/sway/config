@@ -205,3 +205,9 @@ input "2:10:TPPS/2_Elan_TrackPoint" {
     accel_profile adaptive
     pointer_accel 0.4
 }
+
+input "1133:49278:Logitech_Gaming_Mouse_G402" {
+    accel_profile flat
+    pointer_accel 0.9
+    scroll_factor 2.0
+}
