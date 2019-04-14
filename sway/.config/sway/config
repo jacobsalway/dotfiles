@@ -178,7 +178,17 @@ mode "resize" {
     bindsym $down resize grow height 10px
     bindsym $up resize shrink height 10px
     bindsym $right resize grow width 10px
+
+    bindsym Shift+$left resize shrink width 50px
+    bindsym Shift+$down resize grow height 50px
+    bindsym Shift+$up resize shrink height 50px
+    bindsym Shift+$right resize grow width 50px
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
+
+bindsym $mod+Shift+r mode "resize"
 
 # bar
 
