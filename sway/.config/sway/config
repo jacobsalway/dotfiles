@@ -61,6 +61,10 @@ bindsym $mod+r exec $term -e ranger
 # screen lock
 bindsym $mod+Shift+delete exec --no-startup-id swaylock
 
+# screenshot
+# (https://www.reddit.com/r/swaywm/comments/9q5a5l/taking_screenshot_with_selected_area/)
+bindsym Shift+print exec --no-startup-id slurp | grim -g - $(xdg-user-dir PICTURES)/$(date +'screenshot_%Y-%m-%d-%H%M%S.png')
+
 output * bg ~/.wallpaper fill
 
 # outputs/workspaces
