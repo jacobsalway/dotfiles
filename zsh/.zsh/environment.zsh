@@ -18,6 +18,9 @@ export LESSHISTFILE=/dev/null
 # browser
 export BROWSER=chromium
 
+# libva
+export LIBVA_DRIVER_NAME=iHD
+
 # fzf
 # export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 export FZF_DEFAULT_COMMAND="fd --type file --follow --color=always"
