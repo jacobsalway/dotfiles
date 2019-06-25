@@ -51,7 +51,7 @@ set $lilbak --no-startup-id mpc seek -10
 set $bigbak --no-startup-id mpc seek -120
 set $beg --no-startup-id mpc seek 0%
 
-#exec_always --no-startup-id nm-applet
+exec_always --no-startup-id nm-applet --indicator
 exec_always --no-startup-id nextcloud
 exec xrdb ~/.Xresources
 
@@ -180,7 +180,7 @@ bindsym $mod+Shift+s gaps inner current minus 2
 
 # resize
 
-mode "resize" {
+mode "r" {
     bindsym $left resize shrink width 10px
     bindsym $down resize grow height 10px
     bindsym $up resize shrink height 10px
@@ -195,7 +195,7 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 
-bindsym $mod+Shift+r mode "resize"
+bindsym $mod+Shift+r mode "r"
 
 # bar
 
