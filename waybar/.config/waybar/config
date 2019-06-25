@@ -9,7 +9,7 @@
     // Modules configuration
     "sway/workspaces": {
         "disable-scroll": true,
-        "format": "{name}",
+        "format": "{icon}{name}",
         "format-icons": {
             "1": "\uf268 ",
             "2": "\uf120 ",
@@ -19,7 +19,7 @@
         }
     },
     "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
+        "format": "{}"
     },
     "tray": {
         "icon-size": 21,

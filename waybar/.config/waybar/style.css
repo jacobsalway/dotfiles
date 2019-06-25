@@ -1,7 +1,7 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: Hack;
+    font-family: Hack, "FontAwesome 5 Free Solid";
     font-size: 20px;
     min-height: 0;
 }
@@ -32,8 +32,7 @@ window#waybar {
 }
 
 #mode {
-    background: #64727D;
-    border-bottom: 3px solid white;
+    padding: 0 10px;
 }
 
 #backlight, #battery, #network, #pulseaudio, #tray, #mode {
