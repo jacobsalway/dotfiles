@@ -19,7 +19,7 @@ set $down j
 set $up k
 set $right l
 
-set $term urxvt
+set $term st
 set $menu rofi -show run | xargs swaymsg exec --
 set $dpenable swaymsg output eDP-1 enable
 set $dpdisable swaymsg output eDP-1 disable
