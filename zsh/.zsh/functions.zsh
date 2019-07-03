@@ -15,3 +15,10 @@ function unmark {
 function marks {
 	ls -l "$MARKPATH" | sed 's/  / /g' | cut -d' ' -f9- | sed 's/ -/\t-/g' && echo
 }
+
+function fo {
+    local dir
+    dir=$(find ${1:-.} -path '*/\.*' -prune -o -type d \
+        -print 2> /dev/null | fzf +m)
+    cd $dir
+}
