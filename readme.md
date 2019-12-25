@@ -1,5 +1,5 @@
 # dotfiles
-these are my dotfiles, and can be installed using stow
+My dotfiles for Arch. Install them using `stow`.
 
 ![picture](picture.png)
 
