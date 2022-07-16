@@ -3,3 +3,6 @@ $ '
 
 # enable vim mode
 bindkey -v
+
+# aliases
+alias tf=terraform
