@@ -12,4 +12,17 @@ bindkey -v
 bindkey '^R' history-incremental-search-backward
 
 # aliases
+alias g=git
 alias tf=terraform
+
+# git aliases
+alias ga='git add'
+alias gap='git add -p'
+
+alias gst='git status -sb'
+
+alias gc='git commit'
+alias gcm='git commit -m'
+
+alias gp='git push'
+alias gpf='git push --force'
