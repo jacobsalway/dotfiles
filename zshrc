@@ -26,3 +26,5 @@ alias gcm='git commit -m'
 
 alias gp='git push'
 alias gpf='git push --force'
+
+alias gco='git checkout'
