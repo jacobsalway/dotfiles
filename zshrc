@@ -11,20 +11,21 @@ setopt appendhistory
 bindkey -v
 bindkey '^R' history-incremental-search-backward
 
-# aliases
-alias g=git
-alias tf=terraform
+# cd setopts
+setopt nocaseglob
+setopt correct
+setopt auto_cd
 
-# git aliases
-alias ga='git add'
-alias gap='git add -p'
+# cd aliases
+alias -- -='cd -'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
 
-alias gst='git status -sb'
+take() {
+    mkdir -p "$1" && cd "$1"
+}
 
-alias gc='git commit'
-alias gcm='git commit -m'
-
-alias gp='git push'
-alias gpf='git push --force'
-
-alias gco='git checkout'
+r() {
+    cd "$(git rev-parse --show-toplevel 2>/dev/null)"
+}
