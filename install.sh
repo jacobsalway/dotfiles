@@ -15,6 +15,12 @@ create_link() {
     fi
 }
 
+# vim and neovim
 create_link "$(pwd)/vimrc" "$HOME/.vimrc"
 create_link "$(pwd)/init.vim" "$HOME/.config/nvim/init.vim"
+
+# zsh
 create_link "$(pwd)/zshrc" "$HOME/.zshrc"
+
+# tmux
+create_link "$(pwd)/.tmux.conf" "$HOME/.tmux.conf"
