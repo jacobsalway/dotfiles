@@ -2,8 +2,12 @@ set nocompatible
 
 call plug#begin()
 
-Plug 'Mofiqul/vscode.nvim' "vim
-Plug 'tomasiser/vim-code-dark' "neovim
+Plug 'Mofiqul/vscode.nvim'
+
+if has('nvim')
+  Plug 'tomasiser/vim-code-dark'
+  Plug 'nvim-tree/nvim-tree.lua'
+endif
 
 call plug#end()
 
@@ -45,3 +49,14 @@ match ExtraWhitespace /\s\+$/
 
 " disable splash screen
 set shortmess=I
+
+let mapleader = ','
+
+" configure nvim-tree
+if has('nvim')
+  nnoremap <Leader>f :NvimTreeToggle<CR>
+  source nvim-tree-config.lua
+
+  " make background transparent
+  hi NvimTreeNormal guibg=NONE
+endif
