@@ -55,7 +55,8 @@ let mapleader = ','
 " configure nvim-tree
 if has('nvim')
   nnoremap <Leader>f :NvimTreeToggle<CR>
-  source nvim-tree-config.lua
+  " need an absolute path
+  source ~/.config/nvim/nvim-tree-config.lua
 
   " make background transparent
   hi NvimTreeNormal guibg=NONE

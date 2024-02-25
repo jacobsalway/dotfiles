@@ -18,6 +18,7 @@ create_link() {
 # vim and neovim
 create_link "$(pwd)/vimrc" "$HOME/.vimrc"
 create_link "$(pwd)/init.vim" "$HOME/.config/nvim/init.vim"
+create_link "$(pwd)/nvim-tree-config.lua" "$HOME/.config/nvim/nvim-tree-config.lua"
 
 # zsh
 create_link "$(pwd)/zshrc" "$HOME/.zshrc"
