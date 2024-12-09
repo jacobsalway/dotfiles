@@ -2,6 +2,9 @@
 
 set -Euo pipefail
 
+# root is required to link to /usr/local/bin
+sudo -v
+
 create_link() {
     local source_file=$1
     local destination_file=$2
@@ -10,7 +13,7 @@ create_link() {
     mkdir -p $(dirname $2)
 
     if [ ! -f "$destination_file" ]; then
-        ln -s "$source_file" "$destination_file"
+        sudo ln -s "$source_file" "$destination_file"
         echo "Linked $destination_file"
     else
         echo "$destination_file already present so skipping"
@@ -24,3 +27,4 @@ create_link "$(pwd)/vim/init.vim" "$HOME/.config/nvim/init.vim"
 create_link "$(pwd)/vim/nvim-tree-config.lua" "$HOME/.config/nvim/nvim-tree-config.lua"
 
 create_link "$(pwd)/zsh/zshrc" "$HOME/.zshrc"
+create_link "$(pwd)/scripts/aws_profile_fzf.sh" "/usr/local/bin/aws_profile_fzf.sh"

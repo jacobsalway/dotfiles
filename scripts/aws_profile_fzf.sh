@@ -8,4 +8,3 @@ if [ -n "$profile" ]; then
     export AWS_PROFILE="$profile"
     echo "Exported AWS_PROFILE=$profile"
 fi
-
