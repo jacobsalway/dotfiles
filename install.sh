@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -Euo pipefail
+
 create_link() {
     local source_file=$1
     local destination_file=$2
@@ -15,13 +17,10 @@ create_link() {
     fi
 }
 
-# vim and neovim
-create_link "$(pwd)/vimrc" "$HOME/.vimrc"
-create_link "$(pwd)/init.vim" "$HOME/.config/nvim/init.vim"
-create_link "$(pwd)/nvim-tree-config.lua" "$HOME/.config/nvim/nvim-tree-config.lua"
+create_link "$(pwd)/alacritty/alacritty.toml" "$HOME/.alacritty.toml"
 
-# zsh
-create_link "$(pwd)/zshrc" "$HOME/.zshrc"
+create_link "$(pwd)/vim/vimrc" "$HOME/.vimrc"
+create_link "$(pwd)/vim/init.vim" "$HOME/.config/nvim/init.vim"
+create_link "$(pwd)/vim/nvim-tree-config.lua" "$HOME/.config/nvim/nvim-tree-config.lua"
 
-# tmux
-create_link "$(pwd)/.tmux.conf" "$HOME/.tmux.conf"
+create_link "$(pwd)/zsh/zshrc" "$HOME/.zshrc"

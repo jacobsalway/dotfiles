@@ -17,15 +17,4 @@ setopt correct
 setopt auto_cd
 
 # cd aliases
-alias -- -='cd -'
 alias ..='cd ..'
-alias ...='cd ../..'
-alias ....='cd ../../..'
-
-take() {
-    mkdir -p "$1" && cd "$1"
-}
-
-r() {
-    cd "$(git rev-parse --show-toplevel 2>/dev/null)"
-}
