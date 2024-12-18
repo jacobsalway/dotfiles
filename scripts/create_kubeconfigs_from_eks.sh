@@ -27,7 +27,8 @@ for profile in $(aws configure list-profiles); do
     done
 done
 
-# It's probably possible to speed this up with -j
+# While it would be possible to speed this up with -P (e.g. -P 8) to run this concurrently, I encountered
+# issues with YAML parsing that I presume were from multiple processes writing to the file simultaneously
 export -f update_kubeconfig
 cat "$temp_file" | xargs -n 2 bash -c 'update_kubeconfig "$@"' --
 
