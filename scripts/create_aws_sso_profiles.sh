@@ -1,4 +1,5 @@
 #!/bin/bash
+
 set -Euo pipefail
 
 # Inspired by https://github.com/aws-samples/aws-sso-profile-tool/blob/main/awsssoprofiletool.sh
@@ -73,4 +74,3 @@ echo "$accounts" | while IFS=$'\t' read -r skip accountnum accountname skip; do
         echo "output = json" >> profiles
     done
 done
-
