@@ -1,0 +1,4 @@
+k9s:
+  liveViewAutoRefresh: true
+  ui:
+    skin: transparent
