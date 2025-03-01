@@ -11,7 +11,9 @@ setopt incappendhistory
 
 # enable vim mode
 bindkey -v
-bindkey '^R' history-incremental-search-backward
+
+# fzf shell integration
+source <(fzf --zsh)
 
 # cd setopts
 setopt nocaseglob
