@@ -1,4 +1,15 @@
-PROMPT='%F{14}%n%f %F{241}[%f%~%F{241}]%f
+# show git branch in prompt, but only check the HEAD file so it's fast
+# this doesn't work for all cases but might be good enough
+git_branch_fast() {
+  if [[ -f .git/HEAD ]]; then
+    local ref
+    ref=$(sed 's/^ref: refs\/heads\///' .git/HEAD)
+    echo " %F{8}$ref%f"
+  fi
+}
+
+setopt prompt_subst
+PROMPT='%F{14}%n%f %F{241}[%f%~%F{241}]%f$(git_branch_fast)
 $ '
 
 # keep command history
