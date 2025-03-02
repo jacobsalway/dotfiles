@@ -26,6 +26,15 @@ bindkey -v
 # fzf shell integration
 source <(fzf --zsh)
 
+# immediately run command returned by fzf-history-widget
+# https://stackoverflow.com/a/77076793
+fzf-and-run-widget() {
+  fzf-history-widget
+  zle accept-line
+}
+zle -N fzf-and-run-widget
+bindkey '^R' fzf-and-run-widget
+
 # cd setopts
 setopt nocaseglob
 setopt correct
