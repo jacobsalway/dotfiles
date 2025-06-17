@@ -20,7 +20,7 @@ create_link() {
     fi
 }
 
-create_link "$(pwd)/alacritty/alacritty.toml" "$HOME/.alacritty.toml"
+create_link "$(pwd)/ghostty/config" "$HOME/.config/ghostty/config"
 
 create_link "$(pwd)/vim/vimrc" "$HOME/.vimrc"
 create_link "$(pwd)/vim/init.vim" "$HOME/.config/nvim/init.vim"
