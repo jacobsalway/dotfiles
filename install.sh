@@ -3,7 +3,7 @@
 set -Euo pipefail
 
 # root is required to link to /usr/local/bin
-sudo -v
+sudo -v || exit 1
 
 create_link() {
     local source_file=$1
