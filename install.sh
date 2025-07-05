@@ -20,6 +20,8 @@ create_link() {
     fi
 }
 
+create_link "$(pwd)/claude/settings.json" "$HOME/.claude/settings.json"
+
 create_link "$(pwd)/ghostty/config" "$HOME/.config/ghostty/config"
 
 create_link "$(pwd)/vim/vimrc" "$HOME/.vimrc"
