@@ -35,6 +35,10 @@ fzf-and-run-widget() {
 zle -N fzf-and-run-widget
 bindkey '^R' fzf-and-run-widget
 
+# use ctrl to skip through history if there are multi-line commands
+bindkey -M vicmd '^J' down-history
+bindkey -M vicmd '^K' up-history
+
 # cd setopts
 setopt nocaseglob
 setopt correct
