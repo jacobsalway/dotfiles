@@ -13,7 +13,8 @@
     "type": "command",
     "command": "jq -r '\"[\\(.model.display_name)] \\(.context_window.used_percentage // 0)% context\"'"
   },
-  "sandbox": {
-    "enabled": true
+  "enabledPlugins": {
+    "superpowers@claude-plugins-official": true,
+    "gopls-lsp@claude-plugins-official": true
   }
 }
