@@ -47,3 +47,5 @@ setopt auto_cd
 # aliases
 alias ..='cd ..'
 alias profile='source /usr/local/bin/aws_profile_fzf.sh'
+
+export PATH="$HOME/go/bin:$HOME/.local/bin:$PATH"
