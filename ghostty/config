@@ -4,16 +4,3 @@ window-padding-x = 5
 window-padding-y = 5
 
 background = 000000
-
-keybind = ctrl+w>v=new_split:right
-keybind = ctrl+w>s=new_split:down
-
-keybind = ctrl+w>h=goto_split:left
-keybind = ctrl+w>j=goto_split:down
-keybind = ctrl+w>k=goto_split:up
-keybind = ctrl+w>l=goto_split:right
-
-keybind = ctrl+h=goto_split:left
-keybind = ctrl+j=goto_split:down
-keybind = ctrl+k=goto_split:up
-keybind = ctrl+l=goto_split:right

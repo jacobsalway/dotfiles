@@ -1,4 +1,5 @@
 {
+  "defaultMode": "acceptEdits",
   "env": {
     "ENABLE_CLAUDEAI_MCP_SERVERS": "false"
   },
@@ -14,7 +15,7 @@
   },
   "statusLine": {
     "type": "command",
-    "command": "jq -r '\"[\\(.model.display_name)] \\(.context_window.used_percentage // 0)% context\"'"
+    "command": "~/.claude/statusline.sh"
   },
   "enabledPlugins": {
     "superpowers@claude-plugins-official": true,
