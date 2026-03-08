@@ -44,6 +44,8 @@ setopt nocaseglob
 setopt correct
 setopt auto_cd
 
+[[ -z "$TMUX" ]] && tmux
+
 # aliases
 alias ..='cd ..'
 alias profile='source /usr/local/bin/aws_profile_fzf.sh'
