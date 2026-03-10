@@ -48,6 +48,7 @@ setopt auto_cd
 
 # aliases
 alias ..='cd ..'
+alias claude='claude --dangerously-skip-permissions' # TODO: replace with auto mode once available
 alias profile='source /usr/local/bin/aws_profile_fzf.sh'
 
 export PATH="$HOME/go/bin:$HOME/.local/bin:$PATH"
