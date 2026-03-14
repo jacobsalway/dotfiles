@@ -34,14 +34,20 @@ create_link() {
     echo "Linked $destination_file to $source_file"
 }
 
+create_link "$(pwd)/zsh/zshrc" "$HOME/.zshrc"
+
 create_link "$(pwd)/ghostty/config" "$HOME/.config/ghostty/config"
+create_link "$(pwd)/tmux/tmux.conf" "$HOME/.tmux.conf"
+
 create_link "$(pwd)/vim/vimrc" "$HOME/.vimrc"
 create_link "$(pwd)/vim/init.vim" "$HOME/.config/nvim/init.vim"
 create_link "$(pwd)/vim/nvim-tree-config.lua" "$HOME/.config/nvim/nvim-tree-config.lua"
-create_link "$(pwd)/zsh/zshrc" "$HOME/.zshrc"
-create_link "$(pwd)/scripts/aws_profile_fzf.sh" "/usr/local/bin/aws_profile_fzf.sh"
+
 create_link "$(pwd)/k9s/transparent.yaml" "$HOME/Library/Application Support/k9s/skins/transparent.yaml"
 create_link "$(pwd)/k9s/config.yaml" "$HOME/Library/Application Support/k9s/config.yaml"
+
 create_link "$(pwd)/claude/settings.json" "$HOME/.claude/settings.json"
 create_link "$(pwd)/claude/statusline.sh" "$HOME/.claude/statusline.sh"
-create_link "$(pwd)/tmux/tmux.conf" "$HOME/.tmux.conf"
+create_link "$(pwd)/claude/CLAUDE.md" "$HOME/.claude/CLAUDE.md"
+
+create_link "$(pwd)/scripts/aws_profile_fzf.sh" "/usr/local/bin/aws_profile_fzf.sh"

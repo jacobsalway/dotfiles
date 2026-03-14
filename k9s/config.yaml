@@ -1,5 +1,5 @@
 k9s:
   liveViewAutoRefresh: true
-  refreshRate: 1
+  defaultView: po
   ui:
     skin: transparent
