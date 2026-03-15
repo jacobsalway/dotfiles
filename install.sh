@@ -49,6 +49,7 @@ create_link "$(pwd)/k9s/config.yaml" "$HOME/Library/Application Support/k9s/conf
 create_link "$(pwd)/claude/settings.json" "$HOME/.claude/settings.json"
 create_link "$(pwd)/claude/statusline.sh" "$HOME/.claude/statusline.sh"
 create_link "$(pwd)/claude/CLAUDE.md" "$HOME/.claude/CLAUDE.md"
+create_link "$(pwd)/claude/keybindings.json" "$HOME/.claude/keybindings.json"
 
 create_link "$(pwd)/codex/config.toml" "$HOME/.codex/config.toml"
 
