@@ -50,4 +50,6 @@ create_link "$(pwd)/claude/settings.json" "$HOME/.claude/settings.json"
 create_link "$(pwd)/claude/statusline.sh" "$HOME/.claude/statusline.sh"
 create_link "$(pwd)/claude/CLAUDE.md" "$HOME/.claude/CLAUDE.md"
 
+create_link "$(pwd)/codex/config.toml" "$HOME/.codex/config.toml"
+
 create_link "$(pwd)/scripts/aws_profile_fzf.sh" "/usr/local/bin/aws_profile_fzf.sh"
