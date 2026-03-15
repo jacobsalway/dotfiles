@@ -48,5 +48,8 @@ setopt auto_cd
 alias ..='cd ..'
 alias claude='claude --allow-dangerously-skip-permissions' # TODO: replace with auto mode once available
 alias profile='source /usr/local/bin/aws_profile_fzf.sh'
+alias vim='nvim'
 
 export PATH="$HOME/go/bin:$HOME/.local/bin:$PATH"
+
+export EDITOR=nvim
