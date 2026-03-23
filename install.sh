@@ -39,9 +39,7 @@ create_link "$(pwd)/zsh/zshrc" "$HOME/.zshrc"
 create_link "$(pwd)/ghostty/config" "$HOME/.config/ghostty/config"
 create_link "$(pwd)/tmux/tmux.conf" "$HOME/.tmux.conf"
 
-create_link "$(pwd)/vim/vimrc" "$HOME/.vimrc"
-create_link "$(pwd)/vim/init.vim" "$HOME/.config/nvim/init.vim"
-create_link "$(pwd)/vim/nvim-tree-config.lua" "$HOME/.config/nvim/nvim-tree-config.lua"
+create_link "$(pwd)/nvim/init.lua" "$HOME/.config/nvim/init.lua"
 
 create_link "$(pwd)/k9s/transparent.yaml" "$HOME/Library/Application Support/k9s/skins/transparent.yaml"
 create_link "$(pwd)/k9s/config.yaml" "$HOME/Library/Application Support/k9s/config.yaml"
