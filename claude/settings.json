@@ -19,5 +19,8 @@
     "type": "command",
     "command": "~/.claude/statusline.sh"
   },
+  "enabledPlugins": {
+    "superpowers@claude-plugins-official": true
+  },
   "showThinkingSummaries": true
 }
