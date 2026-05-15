@@ -16,3 +16,4 @@
 - PR title matches the commit subject exactly
 - Put detail in the PR description, not the commit message
 - **Always create PRs as draft** — only mark ready for review when the human has signaled it's ready AND a code review agent has self-reviewed
+- PR descriptions must be self-contained — don't reference local paths, scratch files, or anything outside the diff that reviewers can't see
