@@ -79,6 +79,7 @@ done
 wait
 
 echo "Merging kubeconfigs..."
+mkdir -p ~/.kube
 KUBECONFIG=$(find "$temp_dir" -type f | tr '\n' ':') kubectl config view --flatten > ~/.kube/config
 
 echo "Generated kubeconfigs in $(( $(date +%s) - start )) seconds"
